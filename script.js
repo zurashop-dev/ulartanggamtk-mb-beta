@@ -3,7 +3,7 @@ document.getElementById('submit').addEventListener('click', function() {
     const feedbackElement = document.getElementById('feedback');
 
     if (selectedAnswer) {
-        if (selectedAnswer.value === "8") {
+        if (selectedAnswer.value === "12") {
             feedbackElement.textContent = "Jawaban Anda Benar!";
             feedbackElement.style.color = "green";
         } else {
@@ -19,5 +19,4 @@ document.getElementById('submit').addEventListener('click', function() {
 // Logic for "Soal Selanjutnya" can be added here
 document.getElementById('next').addEventListener('click', function() {
     // Logic to load the next question
-    alert("Fitur ini belum diimplementasikan.");
-});
+    alert("Fitur
