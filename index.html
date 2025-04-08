@@ -3,23 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Permainan Ular Tangga - Soal Matematika</title>
+    <title>Latihan Soal Matematika</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
-        <h1>Permainan Ular Tangga - Soal Matematika</h1>
-        <div class="game-board">
-            <div class="question-container">
-                <h2 id="question">Soal akan muncul di sini</h2>
-                <input type="number" id="answer" placeholder="Jawaban Anda">
-                <button id="submit">Kirim Jawaban</button>
-                <p id="feedback"></p>
-            </div>
-            <div class="score-container">
-                <h3>Skor: <span id="score">0</span></h3>
-                <button id="next">Soal Selanjutnya</button>
-            </div>
+        <h1>Latihan Soal Matematika</h1>
+        <div class="question">
+            <h2>1. Berapa hasil dari 5 + 3?</h2>
+            <form id="quiz-form">
+                <label>
+                    <input type="radio" name="answer" value="6"> 6
+                </label><br>
+                <label>
+                    <input type="radio" name="answer" value="7"> 7
+                </label><br>
+                <label>
+                    <input type="radio" name="answer" value="8"> 8
+                </label><br>
+                <label>
+                    <input type="radio" name="answer" value="9"> 9
+                </label><br>
+                <button type="button" id="submit">Kirim Jawaban</button>
+            </form>
+            <p id="feedback"></p>
+        </div>
+        <div class="navigation">
+            <button id="next">Soal Selanjutnya</button>
         </div>
     </div>
 
