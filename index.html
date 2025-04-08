@@ -1,26 +1,54 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Permainan Matematika</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Top-Up Game</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Permainan Matematika</h1>
-        <div class="question-container">
-            <h2 id="question">Soal akan muncul di sini</h2>
-            <input type="number" id="answer" placeholder="Jawaban Anda">
-            <button id="submit">Kirim Jawaban</button>
-            <p id="feedback"></p>
-        </div>
-        <div class="score-container">
-            <h3>Skor: <span id="score">0</span></h3>
-            <button id="next">Soal Selanjutnya</button>
-        </div>
+  <div class="container">
+    <h1>Top-Up Game</h1>
+    <div class="form-group">
+      <label for="game">Pilih Game:</label>
+      <select id="game">
+        <option value="">-- Pilih Game --</option>
+        <option value="Mobile Legends">Mobile Legends</option>
+        <option value="Free Fire">Free Fire</option>
+        <option value="PUBG Mobile">PUBG Mobile</option>
+      </select>
     </div>
 
-    <script src="script.js"></script>
+    <div class="form-group">
+      <label for="userID">User ID:</label>
+      <input type="text" id="userID" placeholder="Masukkan ID Pemain">
+    </div>
+
+    <div class="form-group">
+      <label for="nominal">Nominal:</label>
+      <select id="nominal">
+        <option value="">-- Pilih Nominal --</option>
+        <option value="50 Diamonds">50 Diamonds</option>
+        <option value="100 Diamonds">100 Diamonds</option>
+        <option value="250 Diamonds">250 Diamonds</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="payment">Metode Pembayaran:</label>
+      <select id="payment">
+        <option value="">-- Pilih Metode --</option>
+        <option value="Dana">Dana</option>
+        <option value="OVO">OVO</option>
+        <option value="Gopay">Gopay</option>
+        <option value="Transfer Bank">Transfer Bank</option>
+      </select>
+    </div>
+
+    <button onclick="submitTopUp()">Konfirmasi Top-Up</button>
+    <p id="result"></p>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
