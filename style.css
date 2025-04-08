@@ -1,6 +1,6 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #e9ecef;
+    background-color: #f4f4f4;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -21,16 +21,13 @@ h1 {
     color: #333;
 }
 
-.question-container {
+.question {
     margin-bottom: 20px;
 }
 
-input {
-    width: 80%;
-    padding: 10px;
+label {
+    display: block;
     margin: 10px 0;
-    border: 1px solid #ccc;
-    border-radius: 5px;
 }
 
 button {
@@ -47,11 +44,8 @@ button:hover {
     background-color: #0056b3;
 }
 
-.score-container {
-    margin-top: 20px;
-}
-
 #feedback {
     margin-top: 10px;
     font-weight: bold;
+    color: green;
 }
