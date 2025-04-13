@@ -1,296 +1,142 @@
-<html>
-<head>
-   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
-   <META NAME="Author" CONTENT="InVirCom (Indonesian Virtual Company)">
-   <TITLE>Test Online : Ebtanas</TITLE>
-<SCRIPT>
-// =============================================================================
-// =============================================================================
-// The files is belong to InVirCom
-// You can copy it or print it, but do not edit/delete 
-// the messages and the copyright above and below this page
-// Created by InVirCom (C) July 1998, Last edited May 2002 
-// banksoal@invir.com
-// http://www.invir.com
-// =============================================================================
-// =============================================================================
-var TimeOver = true
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="./assets/styles/style.css">
+        <link rel="stylesheet" href="./assets/styles/dice.css">
+        <link rel="stylesheet" href="./assets/styles/modal.css">
+        <title>UGALO</title>
+        <script>
+            window.console = window.console || function(t) {};
+        </script>
+        <script>
+            if (document.location.search.match(/type=embed/gi)) {
+                window.parent.postMessage("resize", "*");
+            }
+        </script>
+    </head>
+    <body translate="no">
 
-function getJam(Tanggal)
-{
-   Jam =  (Tanggal.getHours() < 10) ? "0"  + Tanggal.getHours()  + ":" : Tanggal.getHours() + ":"
-   Jam += (Tanggal.getMinutes() < 10) ? "0" + Tanggal.getMinutes() + ":" : Tanggal.getMinutes() + ":"
-   Jam += (Tanggal.getSeconds() < 10) ? "0" + Tanggal.getSeconds() : Tanggal.getSeconds()
-   return Jam
-}
+        <div id="board">
+        </div>
 
-function dispJam()
-{
-   TglCur = new Date()
-   document.User.Watch.value = getJam(TglCur)
-   document.User.TimeTaken.value = getWaktu(TglCur,TglStart)
-   if ((Tgl.getTime() - TglCur.getTime()) <= 0)
-   {
-      if(TimeOver) TimeOverWarn()
-      document.User.TimeLeft.value = "Habis"
-   }
-   else
-      document.User.TimeLeft.value = getWaktu(Tgl,TglCur)
-   setTimeout("dispJam()",1000)
-}
-
-function getWaktu(Tgl,TglCur)
-{
-   TmLf = Tgl.getTime() - TglCur.getTime()
-   TmLfHours = Math.floor(TmLf/3600000) 
-   TmLfMinutes = Math.floor((TmLf%3600000)/60000)
-   TmLfSeconds = Math.round((TmLf%60000)/1000)
-   TmLfStr = (TmLfHours < 10) ? "0" + TmLfHours + ":" : TmLfHours + ":"
-   TmLfStr += (TmLfMinutes < 10) ? "0" + TmLfMinutes + ":" : TmLfMinutes + ":"
-   TmLfStr += (TmLfSeconds < 10) ? "0" + TmLfSeconds : TmLfSeconds
-   return TmLfStr
-}
-
-function TimeOverWarn()
-{
-   if (window.confirm("\nWaktu Anda Habis\nApakah Anda Ingin Periksa ?"))
-   {
-      InputHidden()
-      document.CheckQuestions.submit()
-      TimeOver = true
-      return true
-   }
-   else
-   {
-      TimeOver = false
-      return false
-   }
-}
-
-//=========================================//
-
-function InputHidden()
-{
-   StrAnswered = new Array(40)
-   for(i=0; i<40; i++) StrAnswered[i] = "0"
-
-   for(i=0; i<4; i++)
-      if(document.CheckQuestions.SOAL1[i].checked)
-         StrAnswered[0] = document.CheckQuestions.SOAL1[i].value
-   for(i=0; i<4; i++)
-      if(document.CheckQuestions.SOAL2[i].checked)
-         StrAnswered[1] = document.CheckQuestions.SOAL2[i].value
-   for(i=0; i<4; i++)
-      if(document.CheckQuestions.SOAL3[i].checked)
-         StrAnswered[2] = document.CheckQuestions.SOAL3[i].value
-   for(i=0; i<4; i++)
-      if(document.CheckQuestions.SOAL4[i].checked)
-         StrAnswered[3] = document.CheckQuestions.SOAL4[i].value
-   for(i=0; i<4; i++)
-      if(document.CheckQuestions.SOAL5[i].checked)
-         StrAnswered[4] = document.CheckQuestions.SOAL5[i].value
-   for(i=0; i<4; i++)
-      if(document.CheckQuestions.SOAL6[i].checked)
-         StrAnswered[5] = document.CheckQuestions.SOAL6[i].value
-   for(i=0; i<4; i++)
-      if(document.CheckQuestions.SOAL7[i].checked)
-         StrAnswered[6] = document.CheckQuestions.SOAL7[i].value
-   for(i=0; i<4; i++)
-      if(document.CheckQuestions.SOAL8[i].checked)
-         StrAnswered[7] = document.CheckQuestions.SOAL8[i].value
-   for(i=0; i<4; i++)
-      if(document.CheckQuestions.SOAL9[i].checked)
-         StrAnswered[8] = document.CheckQuestions.SOAL9[i].value
-   for(i=0; i<4; i++)
-      if(document.CheckQuestions.SOAL10[i].checked)
-         StrAnswered[9] = document.CheckQuestions.SOAL10[i].value
-   for(i=0; i<4; i++)
-      if(document.CheckQuestions.SOAL11[i].checked)
-         StrAnswered[10] = document.CheckQuestions.SOAL11[i].value
-   for(i=0; i<4; i++)
-      if(document.CheckQuestions.SOAL12[i].checked)
-         StrAnswered[11] = document.CheckQuestions.SOAL12[i].value
-   for(i=0; i<4; i++)
-      if(document.CheckQuestions.SOAL13[i].checked)
-         StrAnswered[12] = document.CheckQuestions.SOAL13[i].value
-   for(i=0; i<4; i++)
-      if(document.CheckQuestions.SOAL14[i].checked)
-         StrAnswered[13] = document.CheckQuestions.SOAL14[i].value
-   for(i=0; i<4; i++)
-      if(document.CheckQuestions.SOAL15[i].checked)
-         StrAnswered[14] = document.CheckQuestions.SOAL15[i].value
-   for(i=0; i<4; i++)
-      if(document.CheckQuestions.SOAL16[i].checked)
-         StrAnswered[15] = document.CheckQuestions.SOAL16[i].value
-   for(i=0; i<4; i++)
-      if(document.CheckQuestions.SOAL17[i].checked)
-         StrAnswered[16] = document.CheckQuestions.SOAL17[i].value
-   for(i=0; i<4; i++)
-      if(document.CheckQuestions.SOAL18[i].checked)
-         StrAnswered[17] = document.CheckQuestions.SOAL18[i].value
-   for(i=0; i<4; i++)
-      if(document.CheckQuestions.SOAL19[i].checked)
-         StrAnswered[18] = document.CheckQuestions.SOAL19[i].value
-   for(i=0; i<4; i++)
-      if(document.CheckQuestions.SOAL20[i].checked)
-         StrAnswered[19] = document.CheckQuestions.SOAL20[i].value
-   for(i=0; i<4; i++)
-      if(document.CheckQuestions.SOAL21[i].checked)
-         StrAnswered[20] = document.CheckQuestions.SOAL21[i].value
-   for(i=0; i<4; i++)
-      if(document.CheckQuestions.SOAL22[i].checked)
-         StrAnswered[21] = document.CheckQuestions.SOAL22[i].value
-   for(i=0; i<4; i++)
-      if(document.CheckQuestions.SOAL23[i].checked)
-         StrAnswered[22] = document.CheckQuestions.SOAL23[i].value
-   for(i=0; i<4; i++)
-      if(document.CheckQuestions.SOAL24[i].checked)
-         StrAnswered[23] = document.CheckQuestions.SOAL24[i].value
-   for(i=0; i<4; i++)
-      if(document.CheckQuestions.SOAL25[i].checked)
-         StrAnswered[24] = document.CheckQuestions.SOAL25[i].value
-   for(i=0; i<4; i++)
-      if(document.CheckQuestions.SOAL26[i].checked)
-         StrAnswered[25] = document.CheckQuestions.SOAL26[i].value
-   for(i=0; i<4; i++)
-      if(document.CheckQuestions.SOAL27[i].checked)
-         StrAnswered[26] = document.CheckQuestions.SOAL27[i].value
-   for(i=0; i<4; i++)
-      if(document.CheckQuestions.SOAL28[i].checked)
-         StrAnswered[27] = document.CheckQuestions.SOAL28[i].value
-   for(i=0; i<4; i++)
-      if(document.CheckQuestions.SOAL29[i].checked)
-         StrAnswered[28] = document.CheckQuestions.SOAL29[i].value
-   for(i=0; i<4; i++)
-      if(document.CheckQuestions.SOAL30[i].checked)
-         StrAnswered[29] = document.CheckQuestions.SOAL30[i].value
-   for(i=0; i<4; i++)
-      if(document.CheckQuestions.SOAL31[i].checked)
-         StrAnswered[30] = document.CheckQuestions.SOAL31[i].value
-   for(i=0; i<4; i++)
-      if(document.CheckQuestions.SOAL32[i].checked)
-         StrAnswered[31] = document.CheckQuestions.SOAL32[i].value
-   for(i=0; i<4; i++)
-      if(document.CheckQuestions.SOAL33[i].checked)
-         StrAnswered[32] = document.CheckQuestions.SOAL33[i].value
-   for(i=0; i<4; i++)
-      if(document.CheckQuestions.SOAL34[i].checked)
-         StrAnswered[33] = document.CheckQuestions.SOAL34[i].value
-   for(i=0; i<4; i++)
-      if(document.CheckQuestions.SOAL35[i].checked)
-         StrAnswered[34] = document.CheckQuestions.SOAL35[i].value
-   for(i=0; i<4; i++)
-      if(document.CheckQuestions.SOAL36[i].checked)
-         StrAnswered[35] = document.CheckQuestions.SOAL36[i].value
-   for(i=0; i<4; i++)
-      if(document.CheckQuestions.SOAL37[i].checked)
-         StrAnswered[36] = document.CheckQuestions.SOAL37[i].value
-   for(i=0; i<4; i++)
-      if(document.CheckQuestions.SOAL38[i].checked)
-         StrAnswered[37] = document.CheckQuestions.SOAL38[i].value
-   for(i=0; i<4; i++)
-      if(document.CheckQuestions.SOAL39[i].checked)
-         StrAnswered[38] = document.CheckQuestions.SOAL39[i].value
-   for(i=0; i<4; i++)
-      if(document.CheckQuestions.SOAL40[i].checked)
-         StrAnswered[39] = document.CheckQuestions.SOAL40[i].value
+        <div class="player-wrapper">
+            <div class="player-list">
+            </div>
+            <button type="button" class="button add-player yellow">
+                Tambah Pemain
+            </button>
+            <button type="button" class="button start-game lightGreen">
+                Mulai
+            </button>
+            <button type="button" class="button reset-game amber">
+                Reset
+            </button>
+            <button data-action="modal" data-target="#peraturan-modal" type="button" class="button lightBlue">
+                Peraturan
+            </button>
+            <button type="button" id="random-dice" class="button blueGrey" style="color: white;">
+                Roll Dadu
+            </button>
 
 
-   StrTmp = ""
-   for(i=0; i < StrAnswered.length; i++)
-      StrTmp += StrAnswered[i]
-   document.CheckQuestions.Answered.value = StrTmp
-   document.CheckQuestions.DateTime.value=TglStr
-   document.CheckQuestions.StartTime.value=TglStart.getTime()
-   document.CheckQuestions.FinishTime.value=TglCur.getTime()
-}
+            <div class="dice-wrapper">
+
+                <div id="background"></div>
+                <div id="wrapper">
+                    <input id="secondroll" name="roll" type="checkbox">
+                    <input id="roll" name="roll" type="checkbox">
+                    <!-- <label for="roll">Roll it!</label>
+                    <label for="secondroll"><span>Stop!</span></label> -->
+                    <div id="platform">
+                        <div id="dice">
+                        <div class="side front">
+                            <div class="dot center"></div>
+                        </div>
+                        <div class="side front inner"></div>
+                        <div class="side top">
+                            <div class="dot dtop dleft"></div>
+                            <div class="dot dbottom dright"></div>
+                        </div>
+                        <div class="side top inner"></div>
+                        <div class="side right">
+                            <div class="dot dtop dleft"></div>
+                            <div class="dot center"></div>
+                            <div class="dot dbottom dright"></div>
+                        </div>
+                        <div class="side right inner"></div>
+                        <div class="side left">
+                            <div class="dot dtop dleft"></div>
+                            <div class="dot dtop dright"></div>
+                            <div class="dot dbottom dleft"></div>
+                            <div class="dot dbottom dright"></div>
+                        </div>
+                        <div class="side left inner"></div>
+                        <div class="side bottom">
+                            <div class="dot center"></div>
+                            <div class="dot dtop dleft"></div>
+                            <div class="dot dtop dright"></div>
+                            <div class="dot dbottom dleft"></div>
+                            <div class="dot dbottom dright"></div>
+                        </div>
+                        <div class="side bottom inner"></div>
+                        <div class="side back">
+                            <div class="dot dtop dleft"></div>
+                            <div class="dot dtop dright"></div>
+                            <div class="dot dbottom dleft"></div>
+                            <div class="dot dbottom dright"></div>
+                            <div class="dot center dleft"></div>
+                            <div class="dot center dright"></div>
+                        </div>
+                        <div class="side back inner"></div>
+                        <div class="side cover x"></div>
+                        <div class="side cover y"></div>
+                        <div class="side cover z"></div>
+                        </div>
+                    </div><!-- .platform -->
+                </div><!--.wrapper -->
 
 
-Tanggal =  new Date()
-Tgl = new Date()
-TglStart = new Date()
+                <p id="dice-result">0</p>
+            </div>
+        </div>
 
-ArrayBulan = new Array("Januari","Pebruari","Maret","April","Mei","Juni","Juli","Agustus","September","Oktober","Nopember","Desember")
-Tahun = (Tanggal.getYear()  <= 99) ? "19"  + Tanggal.getYear() : Tanggal.getYear()
-TglStr = Tanggal.getDate()  + " " + ArrayBulan[Tanggal.getMonth()] + " " + Tahun
+        <div id="finish">
+            <div></div>
+        </div>
+        
+        <div id="peraturan-modal" class="modal-window">
+            <span>
+                <a data-action="close" title="Close" class="modal-close">Tutup</a>
+                <h1>Peraturan</h1>
+                <ol>
+                    <li>Permainan dimainkan oleh 2 orang atau lebih.</li>
+                    <li>Permain yang mendapatkan dadu 6 dapat mengeluarkan pion dan dilanjutkan melempar dadu kembali.</li>
+                    <li>Setiap pemain akan mendapatkan 1 soal ketika menempati tiap kotak.</li>
+                    <li>1 kotak terdapat 3 soal yang berbeda.</li>
+                    <li>Kotak berjumlah 50.</li>
+                    <li>Waktu untuk menyelesaikan soal yaitu 5 menit.</li>
+                    <li>Jika pemain dapat menyelesaikan soal, pemain tersebut berhak mendapat 5 point dan jika pemain tidak dapat menyelesaikan soal, maka pemain tidak mendapat point.</li>
+                    <li>Permainan dikatakan selesai jika salah satu pemain telah menyelesaikan 50 kotak.</li>
+                </ol>
+            </span>
+        </div>
 
-Tgl.setTime(Tgl.getTime() + 120 * 60 * 1000) 
-</SCRIPT>
-</head>
-<BODY BGCOLOR="#F0F0FF" onLoad="dispJam()">
-<FORM NAME=User>
-<table border="1" width="620" cellspacing="0" cellpadding="4" align="center" BGCOLOR="#FFFFFF">
-<tr><td>
- <table border="0" width="600" cellspacing="0" cellpadding="3" align="center">
- <tr><td width="310" colspan="2"><img src="banksoal-anim.gif"></td><td rowspan="2" valign="top" width="290">
-  <table border="0" width="90%" cellspacing="0" cellpadding="0" align="right">
-  <tr><td width="45%"><font face="Arial" size="2" color="#000080"><b>Jumlah Soal</b></font></td><td width="6%"><font face="Arial" size="2" color="#000080"><b>:</b></font></td><td width="47%"><font face="Arial" size="2" color="#000080"><b>40 soal</b></font></td></tr>
-  <tr><td><font face="Arial" size="2" color="#000080"><b>Waktu</b></font></td><td><font face="Arial" size="2" color="#000080"><b>:</b></font></td><td><font face="Arial" size="2" color="#000080"><b>120 menit</b></font></td></tr>
-  <tr><td><font face="Arial" size="2" color="#000080"><b>Mulai</b></font></td><td><font face="Arial" size="2" color="#000080"><b>:</b></font></td><td><font face="Arial" size="2" color="#000080"><b><SCRIPT>document.write(getJam(TglStart))</SCRIPT></b></font></td></tr>
-  <tr><td><font face="Arial" size="2" color="#000080"><b>Selesai</b></font></td><td><font face="Arial" size="2" color="#000080"><b>:</b></font></td><td><font face="Arial" size="2" color="#000080"><b><SCRIPT>document.write(getJam(Tgl))</SCRIPT></b></font></td></tr>
-  <tr><td><font face="Arial" size="2" color="#000080"><b>Sisa</b></font></td><td><font face="Arial" size="2" color="#000080"><b>:</b></font></td><td><font face="Arial" size="2" color="#000080"><b><INPUT TYPE=TEXT NAME=TimeLeft Value="" SIZE=8><INPUT TYPE=HIDDEN NAME=TimeTaken VALUE=""></b></font></td></tr>
-  </table>
- </td></tr>
- <tr><td bgcolor="#000066" width="150"><b><font face="Arial" size="2" color="#FFCCCC"> &nbsp;<SCRIPT>document.write(TglStr)</SCRIPT></font></b></td><td bgcolor="#000066" width="160" align="right"><b><font face="Arial" size="1" color="#FFCCCC"><INPUT TYPE=TEXT NAME=Watch Value="" SIZE=8></font></b></td></tr>
-</FORM></table>
-</td></tr>
-</table>
-<table border="1" width="620" cellspacing="0" cellpadding="4" align="center" BGCOLOR="#FFFFFF">
-<tr><td><img src=sd-header.gif><font face="Arial" size="2" color="#000080"><B><BR>&nbsp; Kelas : 6, Ebtanas (Matematika/Tahun 2003)</B></font></td></tr>
-<tr><td><FORM NAME=CheckQuestions METHOD=GET ACTION="answers.html">
-<br>
-<INPUT TYPE=HIDDEN NAME=Topic VALUE="Matematika"><INPUT TYPE=HIDDEN NAME=SubTopic VALUE="Tahun 2003"><INPUT TYPE=HIDDEN NAME=SchoolLong VALUE="Sekolah Dasar"><INPUT TYPE=HIDDEN NAME=SchoolClass VALUE="6">	
-<table border=0 width=600 cellspacing=0 cellpadding=0><tr><td align=right valign=baseline width=40>1.&nbsp;&nbsp;&nbsp;</td><td valign=top width=560>225 : 5 x 10 = ..........</td></tr><tr><td></td><td><table border=0 width=560 cellspacing=0 cellpadding=0><tr><td valign=top width=280><table border=0 width=280 cellspacing=0 cellpadding=0><tr><td valign=baseline width=40><INPUT TYPE=radio NAME=SOAL1 VALUE=A>A.</td><td valign=top width=260>250</td></tr><tr><td valign=baseline><INPUT TYPE=radio NAME=SOAL1 VALUE=B>B.</td><td valign=top>350</td></tr></table></td><td valign=top width=280><table border=0 width=280 cellspacing=0 cellpadding=0><tr><td valign=baseline width=40><INPUT TYPE=radio NAME=SOAL1 VALUE=C>C.</td><td valign=top width=260>450</td></tr><tr><td valign=baseline><INPUT TYPE=radio NAME=SOAL1 VALUE=D>D.</td><td valign=top>500</td></tr></table></td></tr></table></td></tr><!SOLUTION></table>
-<BR><table border=0 width=600 cellspacing=0 cellpadding=0><tr><td align=right valign=baseline width=40>2.&nbsp;&nbsp;&nbsp;</td><td valign=top width=560>Keliling bangun di bawah ini adalah ........... cm.<BR><IMG SRC=sd6ebtmat03/P01D6EBT0419000002A.gif ALIGN=TEXTTOP></td></tr><tr><td></td><td><table border=0 width=560 cellspacing=0 cellpadding=0><tr><td valign=top width=280><table border=0 width=280 cellspacing=0 cellpadding=0><tr><td valign=baseline width=40><INPUT TYPE=radio NAME=SOAL2 VALUE=A>A.</td><td valign=top width=260>66</td></tr><tr><td valign=baseline><INPUT TYPE=radio NAME=SOAL2 VALUE=B>B.</td><td valign=top>132</td></tr></table></td><td valign=top width=280><table border=0 width=280 cellspacing=0 cellpadding=0><tr><td valign=baseline width=40><INPUT TYPE=radio NAME=SOAL2 VALUE=C>C.</td><td valign=top width=260>1368</td></tr><tr><td valign=baseline><INPUT TYPE=radio NAME=SOAL2 VALUE=D>D.</td><td valign=top>1386</td></tr></table></td></tr></table></td></tr><!SOLUTION></table>
-<BR><table border=0 width=600 cellspacing=0 cellpadding=0><tr><td align=right valign=baseline width=40>3.&nbsp;&nbsp;&nbsp;</td><td valign=top width=560>FPB dari 60, 75, dan 125 adalah ..........</td></tr><tr><td></td><td><table border=0 width=560 cellspacing=0 cellpadding=0><tr><td valign=top width=280><table border=0 width=280 cellspacing=0 cellpadding=0><tr><td valign=baseline width=40><INPUT TYPE=radio NAME=SOAL3 VALUE=A>A.</td><td valign=top width=260>3</td></tr><tr><td valign=baseline><INPUT TYPE=radio NAME=SOAL3 VALUE=B>B.</td><td valign=top>5</td></tr></table></td><td valign=top width=280><table border=0 width=280 cellspacing=0 cellpadding=0><tr><td valign=baseline width=40><INPUT TYPE=radio NAME=SOAL3 VALUE=C>C.</td><td valign=top width=260>6</td></tr><tr><td valign=baseline><INPUT TYPE=radio NAME=SOAL3 VALUE=D>D.</td><td valign=top>15</td></tr></table></td></tr></table></td></tr><!SOLUTION></table>
-<BR><table border=0 width=600 cellspacing=0 cellpadding=0><tr><td align=right valign=baseline width=40>4.&nbsp;&nbsp;&nbsp;</td><td valign=top width=560>Urutan pecahan dari yang terkecil adalah .........</td></tr><tr><td></td><td><table border=0 width=560 cellspacing=0 cellpadding=0><tr><td valign=top width=280><table border=0 width=280 cellspacing=0 cellpadding=0><tr><td valign=baseline width=40><INPUT TYPE=radio NAME=SOAL4 VALUE=A>A.</td><td valign=top width=260><IMG SRC=sd6ebtmat03/seperempat.gif ALIGN=CENTER>, <IMG SRC=sd6ebtmat03/sepertiga.gif ALIGN=CENTER>, <IMG SRC=sd6ebtmat03/setengah.gif ALIGN=CENTER>, <IMG SRC=sd6ebtmat03/tigaperempat.gif ALIGN=CENTER></td></tr><tr><td valign=baseline><INPUT TYPE=radio NAME=SOAL4 VALUE=B>B.</td><td valign=top><IMG SRC=sd6ebtmat03/sepertiga.gif ALIGN=CENTER>, <IMG SRC=sd6ebtmat03/seperempat.gif ALIGN=CENTER>, <IMG SRC=sd6ebtmat03/setengah.gif ALIGN=CENTER>, <IMG SRC=sd6ebtmat03/tigaperempat.gif ALIGN=CENTER></td></tr></table></td><td valign=top width=280><table border=0 width=280 cellspacing=0 cellpadding=0><tr><td valign=baseline width=40><INPUT TYPE=radio NAME=SOAL4 VALUE=C>C.</td><td valign=top width=260><IMG SRC=sd6ebtmat03/tigaperempat.gif ALIGN=CENTER>, <IMG SRC=sd6ebtmat03/setengah.gif ALIGN=CENTER>, <IMG SRC=sd6ebtmat03/sepertiga.gif ALIGN=CENTER>, <IMG SRC=sd6ebtmat03/seperempat.gif ALIGN=CENTER></td></tr><tr><td valign=baseline><INPUT TYPE=radio NAME=SOAL4 VALUE=D>D.</td><td valign=top><IMG SRC=sd6ebtmat03/setengah.gif ALIGN=CENTER>, <IMG SRC=sd6ebtmat03/seperempat.gif ALIGN=CENTER>, <IMG SRC=sd6ebtmat03/sepertiga.gif ALIGN=CENTER>, <IMG SRC=sd6ebtmat03/tigaperempat.gif ALIGN=CENTER></td></tr></table></td></tr></table></td></tr><!SOLUTION></table>
-<BR><table border=0 width=600 cellspacing=0 cellpadding=0><tr><td align=right valign=baseline width=40>5.&nbsp;&nbsp;&nbsp;</td><td valign=top width=560>Sebidang tanah berbentuk persegipanjang sama sisi dengan keliling 100 m. <BR>Jika skala tanah itu 1 : 1000, maka luas tanah pada denah adalah .......... cm&sup2;.</td></tr><tr><td></td><td><table border=0 width=560 cellspacing=0 cellpadding=0><tr><td valign=top width=280><table border=0 width=280 cellspacing=0 cellpadding=0><tr><td valign=baseline width=40><INPUT TYPE=radio NAME=SOAL5 VALUE=A>A.</td><td valign=top width=260>625</td></tr><tr><td valign=baseline><INPUT TYPE=radio NAME=SOAL5 VALUE=B>B.</td><td valign=top>62,5</td></tr></table></td><td valign=top width=280><table border=0 width=280 cellspacing=0 cellpadding=0><tr><td valign=baseline width=40><INPUT TYPE=radio NAME=SOAL5 VALUE=C>C.</td><td valign=top width=260>6,25</td></tr><tr><td valign=baseline><INPUT TYPE=radio NAME=SOAL5 VALUE=D>D.</td><td valign=top>0,625</td></tr></table></td></tr></table></td></tr><!SOLUTION></table>
-<BR><table border=0 width=600 cellspacing=0 cellpadding=0><tr><td align=right valign=baseline width=40>6.&nbsp;&nbsp;&nbsp;</td><td valign=top width=560>1 km&sup2; + 5 hm&sup2; = ........ ha.</td></tr><tr><td></td><td><table border=0 width=560 cellspacing=0 cellpadding=0><tr><td valign=top width=280><table border=0 width=280 cellspacing=0 cellpadding=0><tr><td valign=baseline width=40><INPUT TYPE=radio NAME=SOAL6 VALUE=A>A.</td><td valign=top width=260>105</td></tr><tr><td valign=baseline><INPUT TYPE=radio NAME=SOAL6 VALUE=B>B.</td><td valign=top>104</td></tr></table></td><td valign=top width=280><table border=0 width=280 cellspacing=0 cellpadding=0><tr><td valign=baseline width=40><INPUT TYPE=radio NAME=SOAL6 VALUE=C>C.</td><td valign=top width=260>103</td></tr><tr><td valign=baseline><INPUT TYPE=radio NAME=SOAL6 VALUE=D>D.</td><td valign=top>102</td></tr></table></td></tr></table></td></tr><!SOLUTION></table>
-<BR><table border=0 width=600 cellspacing=0 cellpadding=0><tr><td align=right valign=baseline width=40>7.&nbsp;&nbsp;&nbsp;</td><td valign=top width=560>255 x 28 : 7 = ..........</td></tr><tr><td></td><td><table border=0 width=560 cellspacing=0 cellpadding=0><tr><td valign=top width=280><table border=0 width=280 cellspacing=0 cellpadding=0><tr><td valign=baseline width=40><INPUT TYPE=radio NAME=SOAL7 VALUE=A>A.</td><td valign=top width=260>1.010</td></tr><tr><td valign=baseline><INPUT TYPE=radio NAME=SOAL7 VALUE=B>B.</td><td valign=top>1.020</td></tr></table></td><td valign=top width=280><table border=0 width=280 cellspacing=0 cellpadding=0><tr><td valign=baseline width=40><INPUT TYPE=radio NAME=SOAL7 VALUE=C>C.</td><td valign=top width=260>1.120</td></tr><tr><td valign=baseline><INPUT TYPE=radio NAME=SOAL7 VALUE=D>D.</td><td valign=top>1.125</td></tr></table></td></tr></table></td></tr><!SOLUTION></table>
-<BR><table border=0 width=600 cellspacing=0 cellpadding=0><tr><td align=right valign=baseline width=40>8.&nbsp;&nbsp;&nbsp;</td><td valign=top width=560>Bangun di bawah memiliki simetri putar sebanyak ........<BR><IMG SRC=sd6ebtmat03/P01D6EBT0419000008A.gif ALIGN=TEXTTOP></td></tr><tr><td></td><td><table border=0 width=560 cellspacing=0 cellpadding=0><tr><td valign=top width=280><table border=0 width=280 cellspacing=0 cellpadding=0><tr><td valign=baseline width=40><INPUT TYPE=radio NAME=SOAL8 VALUE=A>A.</td><td valign=top width=260>1</td></tr><tr><td valign=baseline><INPUT TYPE=radio NAME=SOAL8 VALUE=B>B.</td><td valign=top>2</td></tr></table></td><td valign=top width=280><table border=0 width=280 cellspacing=0 cellpadding=0><tr><td valign=baseline width=40><INPUT TYPE=radio NAME=SOAL8 VALUE=C>C.</td><td valign=top width=260>3</td></tr><tr><td valign=baseline><INPUT TYPE=radio NAME=SOAL8 VALUE=D>D.</td><td valign=top>4</td></tr></table></td></tr></table></td></tr><!SOLUTION></table>
-<BR><table border=0 width=600 cellspacing=0 cellpadding=0><tr><td align=right valign=baseline width=40>9.&nbsp;&nbsp;&nbsp;</td><td valign=top width=560>Lambang bilangan Romawi 69 adalah ........</td></tr><tr><td></td><td><table border=0 width=560 cellspacing=0 cellpadding=0><tr><td valign=top width=280><table border=0 width=280 cellspacing=0 cellpadding=0><tr><td valign=baseline width=40><INPUT TYPE=radio NAME=SOAL9 VALUE=A>A.</td><td valign=top width=260>XXLVI</td></tr><tr><td valign=baseline><INPUT TYPE=radio NAME=SOAL9 VALUE=B>B.</td><td valign=top>XLVII</td></tr></table></td><td valign=top width=280><table border=0 width=280 cellspacing=0 cellpadding=0><tr><td valign=baseline width=40><INPUT TYPE=radio NAME=SOAL9 VALUE=C>C.</td><td valign=top width=260>XLIX</td></tr><tr><td valign=baseline><INPUT TYPE=radio NAME=SOAL9 VALUE=D>D.</td><td valign=top>LXIX</td></tr></table></td></tr></table></td></tr><!SOLUTION></table>
-<BR><table border=0 width=600 cellspacing=0 cellpadding=0><tr><td align=right valign=baseline width=40>10.&nbsp;&nbsp;&nbsp;</td><td valign=top width=560><IMG SRC=sd6ebtmat03/P01D6EBT0419000010A.gif ALIGN=TEXTTOP><BR>Titik A terletak pada koordinat ........</td></tr><tr><td></td><td><table border=0 width=560 cellspacing=0 cellpadding=0><tr><td valign=top width=280><table border=0 width=280 cellspacing=0 cellpadding=0><tr><td valign=baseline width=40><INPUT TYPE=radio NAME=SOAL10 VALUE=A>A.</td><td valign=top width=260>(2, 3)</td></tr><tr><td valign=baseline><INPUT TYPE=radio NAME=SOAL10 VALUE=B>B.</td><td valign=top>(2, 4)</td></tr></table></td><td valign=top width=280><table border=0 width=280 cellspacing=0 cellpadding=0><tr><td valign=baseline width=40><INPUT TYPE=radio NAME=SOAL10 VALUE=C>C.</td><td valign=top width=260>(3, 2)</td></tr><tr><td valign=baseline><INPUT TYPE=radio NAME=SOAL10 VALUE=D>D.</td><td valign=top>(4, 2)</td></tr></table></td></tr></table></td></tr><!SOLUTION></table>
-<BR><table border=0 width=600 cellspacing=0 cellpadding=0><tr><td align=right valign=baseline width=40>11.&nbsp;&nbsp;&nbsp;</td><td valign=top width=560>1 km + 12 hm + 2 m = ........ m.</td></tr><tr><td></td><td><table border=0 width=560 cellspacing=0 cellpadding=0><tr><td valign=top width=280><table border=0 width=280 cellspacing=0 cellpadding=0><tr><td valign=baseline width=40><INPUT TYPE=radio NAME=SOAL11 VALUE=A>A.</td><td valign=top width=260>1.122</td></tr><tr><td valign=baseline><INPUT TYPE=radio NAME=SOAL11 VALUE=B>B.</td><td valign=top>2.202</td></tr></table></td><td valign=top width=280><table border=0 width=280 cellspacing=0 cellpadding=0><tr><td valign=baseline width=40><INPUT TYPE=radio NAME=SOAL11 VALUE=C>C.</td><td valign=top width=260>4.022</td></tr><tr><td valign=baseline><INPUT TYPE=radio NAME=SOAL11 VALUE=D>D.</td><td valign=top>4.202</td></tr></table></td></tr></table></td></tr><!SOLUTION></table>
-<BR><table border=0 width=600 cellspacing=0 cellpadding=0><tr><td align=right valign=baseline width=40>12.&nbsp;&nbsp;&nbsp;</td><td valign=top width=560><IMG SRC=sd6ebtmat03/P01D6EBT0419000012A.gif ALIGN=TEXTTOP><BR>Volume kubus di atas adalah 1.000 m&sup3;, panjang rusuk kubus itu adalah ........ cm</td></tr><tr><td></td><td><table border=0 width=560 cellspacing=0 cellpadding=0><tr><td valign=top width=280><table border=0 width=280 cellspacing=0 cellpadding=0><tr><td valign=baseline width=40><INPUT TYPE=radio NAME=SOAL12 VALUE=A>A.</td><td valign=top width=260>10</td></tr><tr><td valign=baseline><INPUT TYPE=radio NAME=SOAL12 VALUE=B>B.</td><td valign=top>20</td></tr></table></td><td valign=top width=280><table border=0 width=280 cellspacing=0 cellpadding=0><tr><td valign=baseline width=40><INPUT TYPE=radio NAME=SOAL12 VALUE=C>C.</td><td valign=top width=260>1000</td></tr><tr><td valign=baseline><INPUT TYPE=radio NAME=SOAL12 VALUE=D>D.</td><td valign=top>1200</td></tr></table></td></tr></table></td></tr><!SOLUTION></table>
-<BR><table border=0 width=600 cellspacing=0 cellpadding=0><tr><td align=right valign=baseline width=40>13.&nbsp;&nbsp;&nbsp;</td><td valign=top width=560><IMG SRC=sd6ebtmat03/P01D6EBT0419000013A.gif ALIGN=TEXTTOP><BR>Pada gambar jaring-jaring kubus di atas, sisi yang berhadapan dengan sisi yang berwarna biru adalah ........</td></tr><tr><td></td><td><table border=0 width=560 cellspacing=0 cellpadding=0><tr><td valign=top width=280><table border=0 width=280 cellspacing=0 cellpadding=0><tr><td valign=baseline width=40><INPUT TYPE=radio NAME=SOAL13 VALUE=A>A.</td><td valign=top width=260>ADFG</td></tr><tr><td valign=baseline><INPUT TYPE=radio NAME=SOAL13 VALUE=B>B.</td><td valign=top>BCEH</td></tr></table></td><td valign=top width=280><table border=0 width=280 cellspacing=0 cellpadding=0><tr><td valign=baseline width=40><INPUT TYPE=radio NAME=SOAL13 VALUE=C>C.</td><td valign=top width=260>CDEF</td></tr><tr><td valign=baseline><INPUT TYPE=radio NAME=SOAL13 VALUE=D>D.</td><td valign=top>EFGH</td></tr></table></td></tr></table></td></tr><!SOLUTION></table>
-<BR><table border=0 width=600 cellspacing=0 cellpadding=0><tr><td align=right valign=baseline width=40>14.&nbsp;&nbsp;&nbsp;</td><td valign=top width=560>KPK dari 725 dan 875 adalah ........</td></tr><tr><td></td><td><table border=0 width=560 cellspacing=0 cellpadding=0><tr><td valign=top width=280><table border=0 width=280 cellspacing=0 cellpadding=0><tr><td valign=baseline width=40><INPUT TYPE=radio NAME=SOAL14 VALUE=A>A.</td><td valign=top width=260>25.275</td></tr><tr><td valign=baseline><INPUT TYPE=radio NAME=SOAL14 VALUE=B>B.</td><td valign=top>25.375</td></tr></table></td><td valign=top width=280><table border=0 width=280 cellspacing=0 cellpadding=0><tr><td valign=baseline width=40><INPUT TYPE=radio NAME=SOAL14 VALUE=C>C.</td><td valign=top width=260>24.375</td></tr><tr><td valign=baseline><INPUT TYPE=radio NAME=SOAL14 VALUE=D>D.</td><td valign=top>25.475</td></tr></table></td></tr></table></td></tr><!SOLUTION></table>
-<BR><table border=0 width=600 cellspacing=0 cellpadding=0><tr><td align=right valign=baseline width=40>15.&nbsp;&nbsp;&nbsp;</td><td valign=top width=560><IMG SRC=sd6ebtmat03/P01D6EBT0419000015A.gif ALIGN=TEXTTOP><BR>Volume bangun kubus di atas adalah ........ cm&sup3;.</td></tr><tr><td></td><td><table border=0 width=560 cellspacing=0 cellpadding=0><tr><td valign=top width=280><table border=0 width=280 cellspacing=0 cellpadding=0><tr><td valign=baseline width=40><INPUT TYPE=radio NAME=SOAL15 VALUE=A>A.</td><td valign=top width=260>1.728</td></tr><tr><td valign=baseline><INPUT TYPE=radio NAME=SOAL15 VALUE=B>B.</td><td valign=top>1.782</td></tr></table></td><td valign=top width=280><table border=0 width=280 cellspacing=0 cellpadding=0><tr><td valign=baseline width=40><INPUT TYPE=radio NAME=SOAL15 VALUE=C>C.</td><td valign=top width=260>1.827</td></tr><tr><td valign=baseline><INPUT TYPE=radio NAME=SOAL15 VALUE=D>D.</td><td valign=top>1.872</td></tr></table></td></tr></table></td></tr><!SOLUTION></table>
-<BR><table border=0 width=600 cellspacing=0 cellpadding=0><tr><td align=right valign=baseline width=40>16.&nbsp;&nbsp;&nbsp;</td><td valign=top width=560>19 x 750 - 550 = ........</td></tr><tr><td></td><td><table border=0 width=560 cellspacing=0 cellpadding=0><tr><td valign=top width=280><table border=0 width=280 cellspacing=0 cellpadding=0><tr><td valign=baseline width=40><INPUT TYPE=radio NAME=SOAL16 VALUE=A>A.</td><td valign=top width=260>3.750</td></tr><tr><td valign=baseline><INPUT TYPE=radio NAME=SOAL16 VALUE=B>B.</td><td valign=top>4.250</td></tr></table></td><td valign=top width=280><table border=0 width=280 cellspacing=0 cellpadding=0><tr><td valign=baseline width=40><INPUT TYPE=radio NAME=SOAL16 VALUE=C>C.</td><td valign=top width=260>13.700</td></tr><tr><td valign=baseline><INPUT TYPE=radio NAME=SOAL16 VALUE=D>D.</td><td valign=top>14.250</td></tr></table></td></tr></table></td></tr><!SOLUTION></table>
-<BR><table border=0 width=600 cellspacing=0 cellpadding=0><tr><td align=right valign=baseline width=40>17.&nbsp;&nbsp;&nbsp;</td><td valign=top width=560>Nilai ulangan matematika Wati sebagai berikut :<BR>9, 8, 6, 6, 7, 8, 10, 5, 7, dan 9.<BR>Nilai rata-rata ulangan Wati adalah ........</td></tr><tr><td></td><td><table border=0 width=560 cellspacing=0 cellpadding=0><tr><td valign=top width=280><table border=0 width=280 cellspacing=0 cellpadding=0><tr><td valign=baseline width=40><INPUT TYPE=radio NAME=SOAL17 VALUE=A>A.</td><td valign=top width=260>6,5</td></tr><tr><td valign=baseline><INPUT TYPE=radio NAME=SOAL17 VALUE=B>B.</td><td valign=top>6,9</td></tr></table></td><td valign=top width=280><table border=0 width=280 cellspacing=0 cellpadding=0><tr><td valign=baseline width=40><INPUT TYPE=radio NAME=SOAL17 VALUE=C>C.</td><td valign=top width=260>7,2</td></tr><tr><td valign=baseline><INPUT TYPE=radio NAME=SOAL17 VALUE=D>D.</td><td valign=top>7,5</td></tr></table></td></tr></table></td></tr><!SOLUTION></table>
-<BR><table border=0 width=600 cellspacing=0 cellpadding=0><tr><td align=right valign=baseline width=40>18.&nbsp;&nbsp;&nbsp;</td><td valign=top width=560><IMG SRC=sd6ebtmat03/P01D6EBT0419000018A.gif ALIGN=CENTER> = ........</td></tr><tr><td></td><td><table border=0 width=560 cellspacing=0 cellpadding=0><tr><td valign=top width=280><table border=0 width=280 cellspacing=0 cellpadding=0><tr><td valign=baseline width=40><INPUT TYPE=radio NAME=SOAL18 VALUE=A>A.</td><td valign=top width=260><IMG SRC=sd6ebtmat03/P01D6EBT0419000018B.gif ALIGN=CENTER></td></tr><tr><td valign=baseline><INPUT TYPE=radio NAME=SOAL18 VALUE=B>B.</td><td valign=top><IMG SRC=sd6ebtmat03/P01D6EBT0419000018C.gif ALIGN=CENTER></td></tr></table></td><td valign=top width=280><table border=0 width=280 cellspacing=0 cellpadding=0><tr><td valign=baseline width=40><INPUT TYPE=radio NAME=SOAL18 VALUE=C>C.</td><td valign=top width=260><IMG SRC=sd6ebtmat03/P01D6EBT0419000018D.gif ALIGN=CENTER></td></tr><tr><td valign=baseline><INPUT TYPE=radio NAME=SOAL18 VALUE=D>D.</td><td valign=top><IMG SRC=sd6ebtmat03/P01D6EBT0419000018E.gif ALIGN=CENTER></td></tr></table></td></tr></table></td></tr><!SOLUTION></table>
-<BR><table border=0 width=600 cellspacing=0 cellpadding=0><tr><td align=right valign=baseline width=40>19.&nbsp;&nbsp;&nbsp;</td><td valign=top width=560>Garis pada bidang koordinat di bawah ini akan membentuk segitiga, jika dihubungkan dengan titik koordinat ........<BR><IMG SRC=sd6ebtmat03/P01D6EBT0419000019A.gif ALIGN=TEXTTOP></td></tr><tr><td></td><td><table border=0 width=560 cellspacing=0 cellpadding=0><tr><td valign=top width=280><table border=0 width=280 cellspacing=0 cellpadding=0><tr><td valign=baseline width=40><INPUT TYPE=radio NAME=SOAL19 VALUE=A>A.</td><td valign=top width=260>(0, 0)</td></tr><tr><td valign=baseline><INPUT TYPE=radio NAME=SOAL19 VALUE=B>B.</td><td valign=top>(3, 1)</td></tr></table></td><td valign=top width=280><table border=0 width=280 cellspacing=0 cellpadding=0><tr><td valign=baseline width=40><INPUT TYPE=radio NAME=SOAL19 VALUE=C>C.</td><td valign=top width=260>(4, 4)</td></tr><tr><td valign=baseline><INPUT TYPE=radio NAME=SOAL19 VALUE=D>D.</td><td valign=top>(5, 5)</td></tr></table></td></tr></table></td></tr><!SOLUTION></table>
-<BR><table border=0 width=600 cellspacing=0 cellpadding=0><tr><td align=right valign=baseline width=40>20.&nbsp;&nbsp;&nbsp;</td><td valign=top width=560><IMG SRC=sd6ebtmat03/P01D6EBT0419000020A.gif ALIGN=TEXTTOP><BR>Bangun di atas memiliki ........ simetri lipat.</td></tr><tr><td></td><td><table border=0 width=560 cellspacing=0 cellpadding=0><tr><td valign=top width=280><table border=0 width=280 cellspacing=0 cellpadding=0><tr><td valign=baseline width=40><INPUT TYPE=radio NAME=SOAL20 VALUE=A>A.</td><td valign=top width=260>1</td></tr><tr><td valign=baseline><INPUT TYPE=radio NAME=SOAL20 VALUE=B>B.</td><td valign=top>2</td></tr></table></td><td valign=top width=280><table border=0 width=280 cellspacing=0 cellpadding=0><tr><td valign=baseline width=40><INPUT TYPE=radio NAME=SOAL20 VALUE=C>C.</td><td valign=top width=260>3</td></tr><tr><td valign=baseline><INPUT TYPE=radio NAME=SOAL20 VALUE=D>D.</td><td valign=top>4</td></tr></table></td></tr></table></td></tr><!SOLUTION></table>
-<BR><table border=0 width=600 cellspacing=0 cellpadding=0><tr><td align=right valign=baseline width=40>21.&nbsp;&nbsp;&nbsp;</td><td valign=top width=560>Sebuah tabung dengan jari-jari 7 cm dan tinggi 15 cm, maka luas permukaan tabung itu adalah ........ cm&sup2;.</td></tr><tr><td></td><td><table border=0 width=560 cellspacing=0 cellpadding=0><tr><td valign=top width=280><table border=0 width=280 cellspacing=0 cellpadding=0><tr><td valign=baseline width=40><INPUT TYPE=radio NAME=SOAL21 VALUE=A>A.</td><td valign=top width=260>968</td></tr><tr><td valign=baseline><INPUT TYPE=radio NAME=SOAL21 VALUE=B>B.</td><td valign=top>985</td></tr></table></td><td valign=top width=280><table border=0 width=280 cellspacing=0 cellpadding=0><tr><td valign=baseline width=40><INPUT TYPE=radio NAME=SOAL21 VALUE=C>C.</td><td valign=top width=260>989</td></tr><tr><td valign=baseline><INPUT TYPE=radio NAME=SOAL21 VALUE=D>D.</td><td valign=top>998</td></tr></table></td></tr></table></td></tr><!SOLUTION></table>
-<BR><table border=0 width=600 cellspacing=0 cellpadding=0><tr><td align=right valign=baseline width=40>22.&nbsp;&nbsp;&nbsp;</td><td valign=top width=560>Nilai dari 6&sup2; x 8&sup2; = ........</td></tr><tr><td></td><td><table border=0 width=560 cellspacing=0 cellpadding=0><tr><td valign=top width=280><table border=0 width=280 cellspacing=0 cellpadding=0><tr><td valign=baseline width=40><INPUT TYPE=radio NAME=SOAL22 VALUE=A>A.</td><td valign=top width=260>2.304</td></tr><tr><td valign=baseline><INPUT TYPE=radio NAME=SOAL22 VALUE=B>B.</td><td valign=top>2.314</td></tr></table></td><td valign=top width=280><table border=0 width=280 cellspacing=0 cellpadding=0><tr><td valign=baseline width=40><INPUT TYPE=radio NAME=SOAL22 VALUE=C>C.</td><td valign=top width=260>2.418</td></tr><tr><td valign=baseline><INPUT TYPE=radio NAME=SOAL22 VALUE=D>D.</td><td valign=top>2.424</td></tr></table></td></tr></table></td></tr><!SOLUTION></table>
-<BR><table border=0 width=600 cellspacing=0 cellpadding=0><tr><td align=right valign=baseline width=40>23.&nbsp;&nbsp;&nbsp;</td><td valign=top width=560>Pada gambar berikut yang termasuk bentuk sudut tumpul adalah ........</td></tr><tr><td></td><td><table border=0 width=560 cellspacing=0 cellpadding=0><tr><td valign=top width=280><table border=0 width=280 cellspacing=0 cellpadding=0><tr><td valign=baseline width=40><INPUT TYPE=radio NAME=SOAL23 VALUE=A>A.</td><td valign=top width=260><IMG SRC=sd6ebtmat03/P01D6EBT0419000023A.gif ALIGN=TEXTTOP></td></tr><tr><td valign=baseline><INPUT TYPE=radio NAME=SOAL23 VALUE=B>B.</td><td valign=top><IMG SRC=sd6ebtmat03/P01D6EBT0419000023B.gif ALIGN=TEXTTOP></td></tr></table></td><td valign=top width=280><table border=0 width=280 cellspacing=0 cellpadding=0><tr><td valign=baseline width=40><INPUT TYPE=radio NAME=SOAL23 VALUE=C>C.</td><td valign=top width=260><IMG SRC=sd6ebtmat03/P01D6EBT0419000023C.gif ALIGN=TEXTTOP></td></tr><tr><td valign=baseline><INPUT TYPE=radio NAME=SOAL23 VALUE=D>D.</td><td valign=top><IMG SRC=sd6ebtmat03/P01D6EBT0419000023D.gif ALIGN=TEXTTOP></td></tr></table></td></tr></table></td></tr><!SOLUTION></table>
-<BR><table border=0 width=600 cellspacing=0 cellpadding=0><tr><td align=right valign=baseline width=40>24.&nbsp;&nbsp;&nbsp;</td><td valign=top width=560>Rita membeli 6 meter pita untuk membuat bunga. Pita itu terpakai <IMG SRC=sd6ebtmat03/duapertiga.gif ALIGN=CENTER> nya. Sisa pita yang terpakai adalah ........ m.</td></tr><tr><td></td><td><table border=0 width=560 cellspacing=0 cellpadding=0><tr><td valign=top width=280><table border=0 width=280 cellspacing=0 cellpadding=0><tr><td valign=baseline width=40><INPUT TYPE=radio NAME=SOAL24 VALUE=A>A.</td><td valign=top width=260>2</td></tr><tr><td valign=baseline><INPUT TYPE=radio NAME=SOAL24 VALUE=B>B.</td><td valign=top>3</td></tr></table></td><td valign=top width=280><table border=0 width=280 cellspacing=0 cellpadding=0><tr><td valign=baseline width=40><INPUT TYPE=radio NAME=SOAL24 VALUE=C>C.</td><td valign=top width=260>4</td></tr><tr><td valign=baseline><INPUT TYPE=radio NAME=SOAL24 VALUE=D>D.</td><td valign=top>5</td></tr></table></td></tr></table></td></tr><!SOLUTION></table>
-<BR><table border=0 width=600 cellspacing=0 cellpadding=0><tr><td align=right valign=baseline width=40>25.&nbsp;&nbsp;&nbsp;</td><td valign=top width=560>Perbandingan uang Dadang dan uang Dodi berbanding 3 : 2. <BR>Jumlah uang mereka Rp. 75.000,00. Uang Dadang adalah ........</td></tr><tr><td></td><td><table border=0 width=560 cellspacing=0 cellpadding=0><tr><td valign=top width=280><table border=0 width=280 cellspacing=0 cellpadding=0><tr><td valign=baseline width=40><INPUT TYPE=radio NAME=SOAL25 VALUE=A>A.</td><td valign=top width=260>Rp 30.000,00</td></tr><tr><td valign=baseline><INPUT TYPE=radio NAME=SOAL25 VALUE=B>B.</td><td valign=top>Rp 46.500,00</td></tr></table></td><td valign=top width=280><table border=0 width=280 cellspacing=0 cellpadding=0><tr><td valign=baseline width=40><INPUT TYPE=radio NAME=SOAL25 VALUE=C>C.</td><td valign=top width=260>Rp 46.000,00</td></tr><tr><td valign=baseline><INPUT TYPE=radio NAME=SOAL25 VALUE=D>D.</td><td valign=top>Rp 45.000,00</td></tr></table></td></tr></table></td></tr><!SOLUTION></table>
-<BR><table border=0 width=600 cellspacing=0 cellpadding=0><tr><td align=right valign=baseline width=40>26.&nbsp;&nbsp;&nbsp;</td><td valign=top width=560>Hasil pencerminan titik P(4, 7) terhadap sumbu Y adalah ........</td></tr><tr><td></td><td><table border=0 width=560 cellspacing=0 cellpadding=0><tr><td valign=top width=280><table border=0 width=280 cellspacing=0 cellpadding=0><tr><td valign=baseline width=40><INPUT TYPE=radio NAME=SOAL26 VALUE=A>A.</td><td valign=top width=260>(7, 4)</td></tr><tr><td valign=baseline><INPUT TYPE=radio NAME=SOAL26 VALUE=B>B.</td><td valign=top>(-7, -4)</td></tr></table></td><td valign=top width=280><table border=0 width=280 cellspacing=0 cellpadding=0><tr><td valign=baseline width=40><INPUT TYPE=radio NAME=SOAL26 VALUE=C>C.</td><td valign=top width=260>(4, -7)</td></tr><tr><td valign=baseline><INPUT TYPE=radio NAME=SOAL26 VALUE=D>D.</td><td valign=top>(-4, 7)</td></tr></table></td></tr></table></td></tr><!SOLUTION></table>
-<BR><table border=0 width=600 cellspacing=0 cellpadding=0><tr><td align=right valign=baseline width=40>27.&nbsp;&nbsp;&nbsp;</td><td valign=top width=560>Tiga buah lampu dinyalakan bersama-sama. Lampu merah menyala setiap 2 detik. Lampu hijau menyala setiap 3 detik, dan lampu kuning menyala setiap 4 detik. Ketiga lampu itu akan menyala bersamaan pada detik ........</td></tr><tr><td></td><td><table border=0 width=560 cellspacing=0 cellpadding=0><tr><td valign=top width=280><table border=0 width=280 cellspacing=0 cellpadding=0><tr><td valign=baseline width=40><INPUT TYPE=radio NAME=SOAL27 VALUE=A>A.</td><td valign=top width=260>12</td></tr><tr><td valign=baseline><INPUT TYPE=radio NAME=SOAL27 VALUE=B>B.</td><td valign=top>11</td></tr></table></td><td valign=top width=280><table border=0 width=280 cellspacing=0 cellpadding=0><tr><td valign=baseline width=40><INPUT TYPE=radio NAME=SOAL27 VALUE=C>C.</td><td valign=top width=260>10</td></tr><tr><td valign=baseline><INPUT TYPE=radio NAME=SOAL27 VALUE=D>D.</td><td valign=top>9</td></tr></table></td></tr></table></td></tr><!SOLUTION></table>
-<BR><table border=0 width=600 cellspacing=0 cellpadding=0><tr><td align=right valign=baseline width=40>28.&nbsp;&nbsp;&nbsp;</td><td valign=top width=560>Sebuah balok, dengan panjang 90 cm, lebar 60 cm dan tinggi 45 cm. Volume balok tersebut adalah ........ cm&sup3;.</td></tr><tr><td></td><td><table border=0 width=560 cellspacing=0 cellpadding=0><tr><td valign=top width=280><table border=0 width=280 cellspacing=0 cellpadding=0><tr><td valign=baseline width=40><INPUT TYPE=radio NAME=SOAL28 VALUE=A>A.</td><td valign=top width=260>243.000</td></tr><tr><td valign=baseline><INPUT TYPE=radio NAME=SOAL28 VALUE=B>B.</td><td valign=top>24.300</td></tr></table></td><td valign=top width=280><table border=0 width=280 cellspacing=0 cellpadding=0><tr><td valign=baseline width=40><INPUT TYPE=radio NAME=SOAL28 VALUE=C>C.</td><td valign=top width=260>2.430</td></tr><tr><td valign=baseline><INPUT TYPE=radio NAME=SOAL28 VALUE=D>D.</td><td valign=top>243</td></tr></table></td></tr></table></td></tr><!SOLUTION></table>
-<BR><table border=0 width=600 cellspacing=0 cellpadding=0><tr><td align=right valign=baseline width=40>29.&nbsp;&nbsp;&nbsp;</td><td valign=top width=560><IMG SRC=sd6ebtmat03/P01D6EBT0419000029A.gif ALIGN=TEXTTOP><BR>Bangun di atas memiliki simetri putar sebanyak ........</td></tr><tr><td></td><td><table border=0 width=560 cellspacing=0 cellpadding=0><tr><td valign=top width=280><table border=0 width=280 cellspacing=0 cellpadding=0><tr><td valign=baseline width=40><INPUT TYPE=radio NAME=SOAL29 VALUE=A>A.</td><td valign=top width=260>1</td></tr><tr><td valign=baseline><INPUT TYPE=radio NAME=SOAL29 VALUE=B>B.</td><td valign=top>2</td></tr></table></td><td valign=top width=280><table border=0 width=280 cellspacing=0 cellpadding=0><tr><td valign=baseline width=40><INPUT TYPE=radio NAME=SOAL29 VALUE=C>C.</td><td valign=top width=260>3</td></tr><tr><td valign=baseline><INPUT TYPE=radio NAME=SOAL29 VALUE=D>D.</td><td valign=top>4</td></tr></table></td></tr></table></td></tr><!SOLUTION></table>
-<BR><table border=0 width=600 cellspacing=0 cellpadding=0><tr><td align=right valign=baseline width=40>30.&nbsp;&nbsp;&nbsp;</td><td valign=top width=560>Bangun prisma segienam terdiri dari ........</td></tr><tr><td></td><td><table border=0 width=560 cellspacing=0 cellpadding=0><tr><td valign=top width=280><table border=0 width=280 cellspacing=0 cellpadding=0><tr><td valign=baseline width=40><INPUT TYPE=radio NAME=SOAL30 VALUE=A>A.</td><td valign=top width=260>4 sisi dan 8 rusuk</td></tr><tr><td valign=baseline><INPUT TYPE=radio NAME=SOAL30 VALUE=B>B.</td><td valign=top>6 sisi dan 12 rusuk</td></tr></table></td><td valign=top width=280><table border=0 width=280 cellspacing=0 cellpadding=0><tr><td valign=baseline width=40><INPUT TYPE=radio NAME=SOAL30 VALUE=C>C.</td><td valign=top width=260>6 sisi dan 8 rusuk</td></tr><tr><td valign=baseline><INPUT TYPE=radio NAME=SOAL30 VALUE=D>D.</td><td valign=top>8 sisi dan 12 rusuk</td></tr></table></td></tr></table></td></tr><!SOLUTION></table>
-<BR><table border=0 width=600 cellspacing=0 cellpadding=0><tr><td align=right valign=baseline width=40>31.&nbsp;&nbsp;&nbsp;</td><td valign=top width=560>Pada bulan yang lalu Pak Asep membeli sepeda Rp. 850.000,00. Karena keperluan yang mendadak sepeda itu dijual kembali dan menanggung rugi 20%. Berapa rupiah Pak Asep menanggung kerugian ?</td></tr><tr><td></td><td><table border=0 width=560 cellspacing=0 cellpadding=0><tr><td valign=top width=280><table border=0 width=280 cellspacing=0 cellpadding=0><tr><td valign=baseline width=40><INPUT TYPE=radio NAME=SOAL31 VALUE=A>A.</td><td valign=top width=260>Rp 160.000,00</td></tr><tr><td valign=baseline><INPUT TYPE=radio NAME=SOAL31 VALUE=B>B.</td><td valign=top>Rp 165.000,00</td></tr></table></td><td valign=top width=280><table border=0 width=280 cellspacing=0 cellpadding=0><tr><td valign=baseline width=40><INPUT TYPE=radio NAME=SOAL31 VALUE=C>C.</td><td valign=top width=260>Rp 170.000,00</td></tr><tr><td valign=baseline><INPUT TYPE=radio NAME=SOAL31 VALUE=D>D.</td><td valign=top>Rp 175.000,00</td></tr></table></td></tr></table></td></tr><!SOLUTION></table>
-<BR><table border=0 width=600 cellspacing=0 cellpadding=0><tr><td align=right valign=baseline width=40>32.&nbsp;&nbsp;&nbsp;</td><td valign=top width=560>Lestari membeli 3<IMG SRC=sd6ebtmat03/setengah.gif ALIGN=CENTER> kg gula, 15 ons minyak dan 0,5 kg terigu. Berat belanjaan Lestari seluruhnya adalah .......</td></tr><tr><td></td><td><table border=0 width=560 cellspacing=0 cellpadding=0><tr><td valign=top width=280><table border=0 width=280 cellspacing=0 cellpadding=0><tr><td valign=baseline width=40><INPUT TYPE=radio NAME=SOAL32 VALUE=A>A.</td><td valign=top width=260>4<IMG SRC=sd6ebtmat03/setengah.gif ALIGN=CENTER> kg</td></tr><tr><td valign=baseline><INPUT TYPE=radio NAME=SOAL32 VALUE=B>B.</td><td valign=top>5<IMG SRC=sd6ebtmat03/seperempat.gif ALIGN=CENTER> kg</td></tr></table></td><td valign=top width=280><table border=0 width=280 cellspacing=0 cellpadding=0><tr><td valign=baseline width=40><INPUT TYPE=radio NAME=SOAL32 VALUE=C>C.</td><td valign=top width=260>5<IMG SRC=sd6ebtmat03/setengah.gif ALIGN=CENTER> kg</td></tr><tr><td valign=baseline><INPUT TYPE=radio NAME=SOAL32 VALUE=D>D.</td><td valign=top>6<IMG SRC=sd6ebtmat03/setengah.gif ALIGN=CENTER> kg</td></tr></table></td></tr></table></td></tr><!SOLUTION></table>
-<BR><table border=0 width=600 cellspacing=0 cellpadding=0><tr><td align=right valign=baseline width=40>33.&nbsp;&nbsp;&nbsp;</td><td valign=top width=560>Seorang pedagang membeli dua peti jeruk, setiap peti berisi 465 buah, kemudian jeruk itu dimasukkan ke dalam kantong plastik. Setiap kantong berisi 15 buah jeruk. Berapa kantong plastik yang diperlukan ?</td></tr><tr><td></td><td><table border=0 width=560 cellspacing=0 cellpadding=0><tr><td valign=top width=280><table border=0 width=280 cellspacing=0 cellpadding=0><tr><td valign=baseline width=40><INPUT TYPE=radio NAME=SOAL33 VALUE=A>A.</td><td valign=top width=260>480</td></tr><tr><td valign=baseline><INPUT TYPE=radio NAME=SOAL33 VALUE=B>B.</td><td valign=top>450</td></tr></table></td><td valign=top width=280><table border=0 width=280 cellspacing=0 cellpadding=0><tr><td valign=baseline width=40><INPUT TYPE=radio NAME=SOAL33 VALUE=C>C.</td><td valign=top width=260>62</td></tr><tr><td valign=baseline><INPUT TYPE=radio NAME=SOAL33 VALUE=D>D.</td><td valign=top>31</td></tr></table></td></tr></table></td></tr><!SOLUTION></table>
-<BR><table border=0 width=600 cellspacing=0 cellpadding=0><tr><td align=right valign=baseline width=40>34.&nbsp;&nbsp;&nbsp;</td><td valign=top width=560>Data penjualan pada koperasi sekolah dalam satu minggu dapat dilihat pada gambar di bawah ini :<BR><IMG SRC=sd6ebtmat03/P01D6EBT0419000034A.gif ALIGN=TEXTTOP><BR>Banyak penjualan buku tulis di Koperasi sekolah dalam satu minggu adalah ........</td></tr><tr><td></td><td><table border=0 width=560 cellspacing=0 cellpadding=0><tr><td valign=top width=280><table border=0 width=280 cellspacing=0 cellpadding=0><tr><td valign=baseline width=40><INPUT TYPE=radio NAME=SOAL34 VALUE=A>A.</td><td valign=top width=260>150</td></tr><tr><td valign=baseline><INPUT TYPE=radio NAME=SOAL34 VALUE=B>B.</td><td valign=top>175</td></tr></table></td><td valign=top width=280><table border=0 width=280 cellspacing=0 cellpadding=0><tr><td valign=baseline width=40><INPUT TYPE=radio NAME=SOAL34 VALUE=C>C.</td><td valign=top width=260>225</td></tr><tr><td valign=baseline><INPUT TYPE=radio NAME=SOAL34 VALUE=D>D.</td><td valign=top>250</td></tr></table></td></tr></table></td></tr><!SOLUTION></table>
-<BR><table border=0 width=600 cellspacing=0 cellpadding=0><tr><td align=right valign=baseline width=40>35.&nbsp;&nbsp;&nbsp;</td><td valign=top width=560>Panjang sisi sebuah kubus ukuran 7,5 dm, maka luas permukaan kubus tersebut <BR>adalah ........ dm&sup2;.</td></tr><tr><td></td><td><table border=0 width=560 cellspacing=0 cellpadding=0><tr><td valign=top width=280><table border=0 width=280 cellspacing=0 cellpadding=0><tr><td valign=baseline width=40><INPUT TYPE=radio NAME=SOAL35 VALUE=A>A.</td><td valign=top width=260>33.750</td></tr><tr><td valign=baseline><INPUT TYPE=radio NAME=SOAL35 VALUE=B>B.</td><td valign=top>3.375</td></tr></table></td><td valign=top width=280><table border=0 width=280 cellspacing=0 cellpadding=0><tr><td valign=baseline width=40><INPUT TYPE=radio NAME=SOAL35 VALUE=C>C.</td><td valign=top width=260>337,5</td></tr><tr><td valign=baseline><INPUT TYPE=radio NAME=SOAL35 VALUE=D>D.</td><td valign=top>33,75</td></tr></table></td></tr></table></td></tr><!SOLUTION></table>
-<BR><table border=0 width=600 cellspacing=0 cellpadding=0><tr><td align=right valign=baseline width=40>36.&nbsp;&nbsp;&nbsp;</td><td valign=top width=560>Diagram lingkaran di bawah menunjukkan mata pelajaran yang digemari siswa kelas VI SD Margamulya.<BR><IMG SRC=sd6ebtmat03/P01D6EBT0419000036A.gif ALIGN=TEXTTOP><BR>Jika banyak siswa 40 orang, maka yang gemar mata pelajaran Matematika adalah ........</td></tr><tr><td></td><td><table border=0 width=560 cellspacing=0 cellpadding=0><tr><td valign=top width=280><table border=0 width=280 cellspacing=0 cellpadding=0><tr><td valign=baseline width=40><INPUT TYPE=radio NAME=SOAL36 VALUE=A>A.</td><td valign=top width=260>12</td></tr><tr><td valign=baseline><INPUT TYPE=radio NAME=SOAL36 VALUE=B>B.</td><td valign=top>15</td></tr></table></td><td valign=top width=280><table border=0 width=280 cellspacing=0 cellpadding=0><tr><td valign=baseline width=40><INPUT TYPE=radio NAME=SOAL36 VALUE=C>C.</td><td valign=top width=260>20</td></tr><tr><td valign=baseline><INPUT TYPE=radio NAME=SOAL36 VALUE=D>D.</td><td valign=top>25</td></tr></table></td></tr></table></td></tr><!SOLUTION></table>
-<BR><table border=0 width=600 cellspacing=0 cellpadding=0><tr><td align=right valign=baseline width=40>37.&nbsp;&nbsp;&nbsp;</td><td valign=top width=560><IMG SRC=sd6ebtmat03/P01D6EBT0419000037A.gif ALIGN=TEXTTOP><BR>Volume bangun tabung di atas adalah ........ cm&sup3;.</td></tr><tr><td></td><td><table border=0 width=560 cellspacing=0 cellpadding=0><tr><td valign=top width=280><table border=0 width=280 cellspacing=0 cellpadding=0><tr><td valign=baseline width=40><INPUT TYPE=radio NAME=SOAL37 VALUE=A>A.</td><td valign=top width=260>525</td></tr><tr><td valign=baseline><INPUT TYPE=radio NAME=SOAL37 VALUE=B>B.</td><td valign=top>1.386</td></tr></table></td><td valign=top width=280><table border=0 width=280 cellspacing=0 cellpadding=0><tr><td valign=baseline width=40><INPUT TYPE=radio NAME=SOAL37 VALUE=C>C.</td><td valign=top width=260>1.649,8</td></tr><tr><td valign=baseline><INPUT TYPE=radio NAME=SOAL37 VALUE=D>D.</td><td valign=top>17.325</td></tr></table></td></tr></table></td></tr><!SOLUTION></table>
-<BR><table border=0 width=600 cellspacing=0 cellpadding=0><tr><td align=right valign=baseline width=40>38.&nbsp;&nbsp;&nbsp;</td><td valign=top width=560><IMG SRC=sd6ebtmat03/P01D6EBT0419000038A.gif ALIGN=TEXTTOP><BR>Banyak titik sudut pada gambar di atas adalah ........</td></tr><tr><td></td><td><table border=0 width=560 cellspacing=0 cellpadding=0><tr><td valign=top width=280><table border=0 width=280 cellspacing=0 cellpadding=0><tr><td valign=baseline width=40><INPUT TYPE=radio NAME=SOAL38 VALUE=A>A.</td><td valign=top width=260>2</td></tr><tr><td valign=baseline><INPUT TYPE=radio NAME=SOAL38 VALUE=B>B.</td><td valign=top>3</td></tr></table></td><td valign=top width=280><table border=0 width=280 cellspacing=0 cellpadding=0><tr><td valign=baseline width=40><INPUT TYPE=radio NAME=SOAL38 VALUE=C>C.</td><td valign=top width=260>4</td></tr><tr><td valign=baseline><INPUT TYPE=radio NAME=SOAL38 VALUE=D>D.</td><td valign=top>5</td></tr></table></td></tr></table></td></tr><!SOLUTION></table>
-<BR><table border=0 width=600 cellspacing=0 cellpadding=0><tr><td align=right valign=baseline width=40>39.&nbsp;&nbsp;&nbsp;</td><td valign=top width=560>Opik dapat menyelesaikan suatu pekerjaan dalam waktu 3 jam. Sedangkan Susi dapat menyelesaikan pekerjaan yang sama selama 6 jam. Berapa jam waktu yang diperlukan bila dikerjakan bersama-sama ?</td></tr><tr><td></td><td><table border=0 width=560 cellspacing=0 cellpadding=0><tr><td valign=top width=280><table border=0 width=280 cellspacing=0 cellpadding=0><tr><td valign=baseline width=40><INPUT TYPE=radio NAME=SOAL39 VALUE=A>A.</td><td valign=top width=260>2</td></tr><tr><td valign=baseline><INPUT TYPE=radio NAME=SOAL39 VALUE=B>B.</td><td valign=top>3</td></tr></table></td><td valign=top width=280><table border=0 width=280 cellspacing=0 cellpadding=0><tr><td valign=baseline width=40><INPUT TYPE=radio NAME=SOAL39 VALUE=C>C.</td><td valign=top width=260>4</td></tr><tr><td valign=baseline><INPUT TYPE=radio NAME=SOAL39 VALUE=D>D.</td><td valign=top>5</td></tr></table></td></tr></table></td></tr><!SOLUTION></table>
-<BR><table border=0 width=600 cellspacing=0 cellpadding=0><tr><td align=right valign=baseline width=40>40.&nbsp;&nbsp;&nbsp;</td><td valign=top width=560>Berikut nilai hasil ujian akhir sekolah Andi tahun ajaran 2002/2003 :<BR>a. PPKN&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :&nbsp;&nbsp;7<BR>b. Bahasa Indonesia&nbsp;&nbsp; :&nbsp;&nbsp;8<BR>c. Matematika&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;6<BR>d. IPA&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;6<BR>e. IPS&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :&nbsp;&nbsp;8<BR>Nilai rata-rata yang diperoleh Andi dari mata pelajaran tersebut adalah ........</td></tr><tr><td></td><td><table border=0 width=560 cellspacing=0 cellpadding=0><tr><td valign=top width=280><table border=0 width=280 cellspacing=0 cellpadding=0><tr><td valign=baseline width=40><INPUT TYPE=radio NAME=SOAL40 VALUE=A>A.</td><td valign=top width=260>5</td></tr><tr><td valign=baseline><INPUT TYPE=radio NAME=SOAL40 VALUE=B>B.</td><td valign=top>6</td></tr></table></td><td valign=top width=280><table border=0 width=280 cellspacing=0 cellpadding=0><tr><td valign=baseline width=40><INPUT TYPE=radio NAME=SOAL40 VALUE=C>C.</td><td valign=top width=260>7</td></tr><tr><td valign=baseline><INPUT TYPE=radio NAME=SOAL40 VALUE=D>D.</td><td valign=top>8</td></tr></table></td></tr></table></td></tr><!SOLUTION></table>
-<BR><br>
-<br>
-<INPUT TYPE=HIDDEN NAME=Name VALUE=""><INPUT TYPE=HIDDEN NAME=School VALUE=""><INPUT TYPE=HIDDEN NAME=Lesson VALUE="Ebtanas"><INPUT TYPE=HIDDEN NAME=Answered VALUE=""><INPUT TYPE=HIDDEN NAME=Keys VALUE="48|40|40|32|48|32|40|32|56|40|40|48|48|40|32|48|56|32|40|48|32|32|56|32|56|56|32|32|40|56|48|48|48|56|48|32|56|56|32|48"><INPUT TYPE=HIDDEN NAME= DateTime VALUE=""><INPUT TYPE=HIDDEN NAME= StartTime VALUE=""><INPUT TYPE=HIDDEN NAME= FinishTime VALUE=""><INPUT TYPE=HIDDEN NAME= Time VALUE="120">
-</td></tr>
-<tr><td align="right"><input type=image src="periksa.gif" BORDER=0 onClick="InputHidden()"></td></tr>
-</table>
-</FORM>
-<table border="0" cellpadding="0" cellspacing="0" width="620" align="center">
-<tr><td valign="top"><font face="Arial" size="2"><b><a href="../index.html">Home</a></b></font></td><td align="right"><font size="-2" face="Arial"><i>Copyright © 1999-2007, <a href="http://www.invir.com">InVirCom</a>, All rights reserved.<br>
-Homepage : <a href="http://www.invir.com">http://www.invir.com</a>,
-email : <a href="mailto:banksoal@invir.com">banksoal@invir.com</a></i></font></td></tr>
-</table>
-</body>
+        <div id="question-modal" class="modal-window">
+            <span>
+                <a data-action="close" title="Close" class="modal-close">Tutup</a>
+            </span>
+            <div class="question">
+
+            </div>
+        </div>
+
+        <script src="./assets/js/jquery.js"></script>
+        <script src="./assets/js/app.js"></script>
+        <!-- https://www.1001fonts.com/digital-fonts.html -->
+        <!-- <div>Icons made by <a href="https://www.flaticon.com/authors/nikita-golubev" title="Nikita Golubev">Nikita Golubev</a> from <a href="https://www.flaticon.com/"             title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/"             title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div> -->
+        <!-- https://codepen.io/tameraydin/pen/CADvB -->
+        <!-- http://soundbible.com/181-Roll-Dice-2.html -->
+        <!-- https://www.genengnews.com/wp-content/uploads/2018/10/Feb1_2018_GEtty_489973431_SnakesAndLaddrs7098137751.jpg -->
+    </body>
 </html>
