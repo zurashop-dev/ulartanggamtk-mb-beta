@@ -1,54 +1,169 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Top-Up Game</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dalang Store</title>
+    <link rel="icon" type="image/png" href="https://files.catbox.moe/8fxdzd.jpg"
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+        <link href="style.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 </head>
 <body>
-  <div class="container">
-    <h1>Top-Up Game</h1>
-    <div class="form-group">
-      <label for="game">Pilih Game:</label>
-      <select id="game">
-        <option value="">-- Pilih Game --</option>
-        <option value="Mobile Legends">Mobile Legends</option>
-        <option value="Free Fire">Free Fire</option>
-        <option value="PUBG Mobile">PUBG Mobile</option>
-      </select>
-    </div>
+    <audio id="backgroundMusic" src="S.mp3" autoplay loop></audio>
+  <br>
 
-    <div class="form-group">
-      <label for="userID">User ID:</label>
-      <input type="text" id="userID" placeholder="Masukkan ID Pemain">
-    </div>
+    <header id="home">
+        <img src="https://files.catbox.moe/8fxdzd.jpg" alt="Profile">
+        <h1>Dalang Store</h1>
+<p>Welcome to my online shop</p>
 
-    <div class="form-group">
-      <label for="nominal">Nominal:</label>
-      <select id="nominal">
-        <option value="">-- Pilih Nominal --</option>
-        <option value="50 Diamonds">50 Diamonds</option>
-        <option value="100 Diamonds">100 Diamonds</option>
-        <option value="250 Diamonds">250 Diamonds</option>
-      </select>
-    </div>
+        <div class="nav-menu">
+            <a href="#home"><button><i class="fas fa-home"></i>Home</button></a>
+            <a href="https://whatsapp.com/channel/0029VaVJJeQ72WTqHpT2V92M"><button><i class="fas fa-star"></i>Testimoni</button></a>
+            <a href="#produc"><button><i class="fas fa-store"></i>Produk</button></a>
+            <a href="#medsos"><button><i class="fas fa-globe"></i>Medsos</button></a>
+        </div>
+    </header>
 
-    <div class="form-group">
-      <label for="payment">Metode Pembayaran:</label>
-      <select id="payment">
-        <option value="">-- Pilih Metode --</option>
-        <option value="Dana">Dana</option>
-        <option value="OVO">OVO</option>
-        <option value="Gopay">Gopay</option>
-        <option value="Transfer Bank">Transfer Bank</option>
-      </select>
-    </div>
-
-    <button onclick="submitTopUp()">Konfirmasi Top-Up</button>
-    <p id="result"></p>
+    <section id="produc">
+        <h1 class="judul"><i class="fas fa-store">&nbsp;</i> Produk Saya</h1>
+        <div class="project-container">
+ <div class="produk">
+  <img src="https://files.catbox.moe/p12pou.jpg" alt="Gambar Produk" width="400" height="400">
+  <div class="deskripsi">
+    <h2>RESSELER SURXRAT</h2>
+    <br>
+<li>✓ Bisa jual akun surxrat</li>
+<li>✓ Create user via bot tele</li>
+<li>✓ Free murid ransomware</li>
+<li>✓ Permanen & free upgrade selamanya</li>
+<li>✓ Permanen + Free update</li>
+<li>✓ Modal kecil untung ratusan/jutaan</li>
+<li>✓ Full tutorial</li>
+<br>
+    <p2>Harga: Rp 50.000</p2>
+  
   </div>
+  <a href="https://wa.me/6281377796883?text=Mau+join+reseller+surxrat" target="_blank" class="tombol-beli">Beli Sekarang</a>
+</div>
 
-  <script src="script.js"></script>
+<div class="produk">
+  <img src="https://files.catbox.moe/xsxe85.jpg" alt="Gambar Produk" width="400" height="400">
+  <div class="deskripsi">
+    <h2>AKUN SURXRAT</h2>
+<br>
+<li>✓ Sms new = otp wa,ig,fb & ewallet</li>
+<li>✓ Bisa lihat gmail korban</li>
+<li>✓ Bisa lihat kontak & send teks ke layar</li>
+<li>✓ Nyalakan senter & send suara</li>
+<li>✓ Play musik & ubah wallpaper</li>
+<li>✓ Getarkan perangkat & hapus file</li>
+<li>✓ Permanen & free upgrade</li>
+<br>
+    <p2>Harga: Rp 30.000</p2>
+  </div>
+  <a href="https://wa.me/6281377796883?text=Mau+order+akun+surxrat" target="_blank" class="tombol-beli">Beli Sekarang</a>
+</div>
+
+<div class="produk">
+  <img src="https://files.catbox.moe/v7yenk.jpg" alt="Gambar Produk" width="400" height="400">
+  <div class="deskripsi">
+    <h2>SC WEB PISHING</h2>
+    <br>
+<li>✓ Bisa hack kamera</li>
+<li>✓ Bisa hack microphone</li>
+<li>✓ Bisa hack lokasi secara akurat</li>
+<li>✓ Bisa di jual lagi</li>
+<li>✓ Halaman html bebas di ganti</li>
+<li>✓ Full tutor up ke glitch</li>
+<li>✓ Sc simpel html,css & javascript no enc</li>
+<br>
+    <p2>Harga: Rp 20.000</p2>
+  </div>
+  <a href="https://wa.me/6281377796883?text=Mau+order+sc+web+pishing" target="_blank" class="tombol-beli">Beli Sekarang</a>
+</div>
+<div class="produk">
+  <img src="https://files.catbox.moe/akezfm.jpg" alt="Gambar Produk" width="400" height="400">
+
+  <div class="deskripsi">
+    <h2>APK RANSOMWARE</h2>
+<br>
+<li>✓ Apk untuk mengunci all apk</li>
+<li>✓ Korban harus membayar tebusan</li>
+<li>✓ Kunci bisa di ubah</li>
+<li>✓ Bisa tambahkan paymentmu</li>
+<li>✓ Free tutor ubah icon,nama & payment</li>
+<li>✓ Bisa di jual lagi</li>
+<li>✓ Permanen</li>
+<br>
+    <p2>Harga: Rp 10.000</p2>
+  </div>
+  <a href="https://wa.me/6281377796883?text=Mau+order+apk+ransomware" target="_blank" class="tombol-beli">Beli Sekarang</a>
+</div>
+
+<div class="produk">
+  <img src="https://files.catbox.moe/ucy49e.jpg" alt="Gambar Produk" width="400" height="400">
+  <div class="deskripsi">
+    <h2>PANEL PTERODACTYL</h2>
+  <br>
+  <li>✓ Owner panel 30k</li>
+  <li>✓ Patner panel 20k</li>
+  <li>✓ Admin panel 15k</li>
+  <li>✓ 1gb - 10gb & unli</li>
+  <li>✓ Server anti delay</li>
+  <li>✓ Sc anti colong</li>
+  <li>✓ Spek server ram 8 core 4</li>
+  <br>
+    <p2>Harga: Rp 2.000 - Rp 30.000</p2>
+  </div>
+  <a href="https://wa.me/6281377796883?text=Mau+order+panel" target="_blank" class="tombol-beli">Beli Sekarang</a>
+</div>
+
+        </div>
+    </section>
+    <section id="warning">
+        <h1 class="judul"><i class="fas fa-warning">&nbsp;</i>Peringatan</h1>
+        <p>Produk yang saya jual,seperti apk sadap & ransomware hanya di tunjukkan untuk hiburan dan bahan edukasi,saya tidak bertanggung jawab jika digunakan untuk tujuan melanggar hukum/tindak kriminal,Gunakan dengan bijak dengan aturan yg berlaku.</p>
+    </section>
+    <section id="medsos">
+        <h1 class="judul"><i class="fas fa-globe"></i>&nbsp;</i> Media Sosial</h1>
+        <div class="btn-container">
+        <button class="btn" id="whatsappButton">
+            <i class="fab fa-whatsapp"></i> 
+            WhatsApp
+            <i class="fas fa-share"></i>
+        </button>
+
+        <button class="btn" id="telegramButton">
+            <i class="fab fa-telegram"></i> 
+           Telegram
+            <i class="fas fa-share"></i>
+        </button>
+        
+       <button class="btn" id="tiktokButton">
+         <i class="fab fa-tiktok"></i>
+         Tiktok
+         <i class="fas fa-share"></i>
+       </button>
+    </div>
+    </section>
+
+    <script>
+        document.getElementById('whatsappButton').addEventListener('click', function() {
+            window.location.href = 'https://wa.me/6281377796883';
+        });
+        document.getElementById('telegramButton').addEventListener('click', function() {
+            window.location.href = 'https://t.me/dalangstore';
+        });
+        
+        document.getElementById('tiktokButton').addEventListener('click', function() {
+
+            window.location.href = 'https://www.tiktok.com/@f0iio3m3';
+
+        });
+        
+    </script>
 </body>
 </html>
+
