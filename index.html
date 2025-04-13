@@ -246,10 +246,10 @@
                 const luas = sisi * sisi;
                 const askFor = Math.random() < 0.5 ? 'luas' : 'sisi';
                 if (askFor === 'luas') {
-                    question = `Diketahui persegi memiliki sisi ${sisi} cm. Berapa luasnya?`;
+                    question = Diketahui persegi memiliki sisi ${sisi} cm. Berapa luasnya?;
                     correctAnswer = luas;
                 } else {
-                    question = `Diketahui luas persegi adalah ${luas} cm². Berapa panjang sisinya?`;
+                    question = Diketahui luas persegi adalah ${luas} cm². Berapa panjang sisinya?;
                     correctAnswer = Math.sqrt(luas);
                 }
             } else if (shape === 'segitiga') {
@@ -258,13 +258,13 @@
                 const luas = (alas * tinggi) / 2;
                 const askFor = Math.random() < 0.33 ? 'luas' : Math.random() < 0.5 ? 'alas' : 'tinggi';
                 if (askFor === 'luas') {
-                    question = `Diketahui segitiga memiliki alas ${alas} cm dan tinggi ${tinggi} cm. Berapa luasnya?`;
+                    question = Diketahui segitiga memiliki alas ${alas} cm dan tinggi ${tinggi} cm. Berapa luasnya?;
                     correctAnswer = luas;
                 } else if (askFor === 'alas') {
-                    question = `Diketahui luas segitiga adalah ${luas} cm² dan tingginya ${tinggi} cm. Berapa panjang alasnya?`;
+                    question = Diketahui luas segitiga adalah ${luas} cm² dan tingginya ${tinggi} cm. Berapa panjang alasnya?;
                     correctAnswer = (2 * luas) / tinggi;
                 } else {
-                    question = `Diketahui luas segitiga adalah ${luas} cm² dan alasnya ${alas} cm. Berapa tingginya?`;
+                    question = Diketahui luas segitiga adalah ${luas} cm² dan alasnya ${alas} cm. Berapa tingginya?;
                     correctAnswer = (2 * luas) / alas;
                 }
             } else if (shape === 'persegiPanjang') {
@@ -273,13 +273,13 @@
                 const luas = panjang * lebar;
                 const askFor = Math.random() < 0.33 ? 'luas' : Math.random() < 0.5 ? 'panjang' : 'lebar';
                 if (askFor === 'luas') {
-                    question = `Diketahui persegi panjang memiliki panjang ${panjang} cm dan lebar ${lebar} cm. Berapa luasnya?`;
+                    question = Diketahui persegi panjang memiliki panjang ${panjang} cm dan lebar ${lebar} cm. Berapa luasnya?;
                     correctAnswer = luas;
                 } else if (askFor === 'panjang') {
-                    question = `Diketahui luas persegi panjang adalah ${luas} cm² dan lebarnya ${lebar} cm. Berapa panjangnya?`;
+                    question = Diketahui luas persegi panjang adalah ${luas} cm² dan lebarnya ${lebar} cm. Berapa panjangnya?;
                     correctAnswer = luas / lebar;
                 } else {
-                    question = `Diketahui luas persegi panjang adalah ${luas} cm² dan panjangnya ${panjang} cm. Berapa lebarnya?`;
+                    question = Diketahui luas persegi panjang adalah ${luas} cm² dan panjangnya ${panjang} cm. Berapa lebarnya?;
                     correctAnswer = luas / panjang;
                 }
             } else if (shape === 'lingkaran') {
@@ -289,10 +289,10 @@
                 const luas = pi * radius * radius;
                 const askFor = Math.random() < 0.5 ? 'luas' : 'radius';
                 if (askFor === 'luas') {
-                    question = `Diketahui lingkaran memiliki jari-jari ${radius} cm. Berapa luasnya? (Gunakan π = ${isMultipleOf7 ? '22/7' : '3.14'})`;
+                    question = Diketahui lingkaran memiliki jari-jari ${radius} cm. Berapa luasnya? (Gunakan π = ${isMultipleOf7 ? '22/7' : '3.14'});
                     correctAnswer = parseFloat(luas.toFixed(2));
                 } else {
-                    question = `Diketahui luas lingkaran adalah ${parseFloat(luas.toFixed(2))} cm². Berapa jari-jarinya? (Gunakan π = ${isMultipleOf7 ? '22/7' : '3.14'})`;
+                    question = Diketahui luas lingkaran adalah ${parseFloat(luas.toFixed(2))} cm². Berapa jari-jarinya? (Gunakan π = ${isMultipleOf7 ? '22/7' : '3.14'});
                     correctAnswer = parseFloat((Math.sqrt(luas / pi)).toFixed(2));
                 }
             } else if (shape === 'jajarGenjang') {
@@ -301,13 +301,13 @@
                 const luas = alas * tinggi;
                 const askFor = Math.random() < 0.33 ? 'luas' : Math.random() < 0.5 ? 'alas' : 'tinggi';
                 if (askFor === 'luas') {
-                    question = `Diketahui jajar genjang memiliki alas ${alas} cm dan tinggi ${tinggi} cm. Berapa luasnya?`;
+                    question = Diketahui jajar genjang memiliki alas ${alas} cm dan tinggi ${tinggi} cm. Berapa luasnya?;
                     correctAnswer = luas;
                 } else if (askFor === 'alas') {
-                    question = `Diketahui luas jajar genjang adalah ${luas} cm² dan tingginya ${tinggi} cm. Berapa panjang alasnya?`;
+                    question = Diketahui luas jajar genjang adalah ${luas} cm² dan tingginya ${tinggi} cm. Berapa panjang alasnya?;
                     correctAnswer = luas / tinggi;
                 } else {
-                    question = `Diketahui luas jajar genjang adalah ${luas} cm² dan alasnya ${alas} cm. Berapa tingginya?`;
+                    question = Diketahui luas jajar genjang adalah ${luas} cm² dan alasnya ${alas} cm. Berapa tingginya?;
                     correctAnswer = luas / alas;
                 }
             } else if (shape === 'trapesium') {
@@ -317,16 +317,16 @@
                 const luas = ((a + b) * tinggi) / 2;
                 const askFor = Math.random() < 0.25 ? 'luas' : Math.random() < 0.5 ? 'a' : Math.random() < 0.75 ? 'b' : 'tinggi';
                 if (askFor === 'luas') {
-                    question = `Diketahui trapesium memiliki sisi sejajar ${a} cm dan ${b} cm serta tinggi ${tinggi} cm. Berapa luasnya?`;
+                    question = Diketahui trapesium memiliki sisi sejajar ${a} cm dan ${b} cm serta tinggi ${tinggi} cm. Berapa luasnya?;
                     correctAnswer = luas;
                 } else if (askFor === 'a') {
-                    question = `Diketahui luas trapesium adalah ${luas} cm², sisi sejajar kedua ${b} cm, dan tinggi ${tinggi} cm. Berapa panjang sisi sejajar pertama?`;
+                    question = Diketahui luas trapesium adalah ${luas} cm², sisi sejajar kedua ${b} cm, dan tinggi ${tinggi} cm. Berapa panjang sisi sejajar pertama?;
                     correctAnswer = ((2 * luas) / tinggi - b);
                 } else if (askFor === 'b') {
-                    question = `Diketahui luas trapesium adalah ${luas} cm², sisi sejajar pertama ${a} cm, dan tinggi ${tinggi} cm. Berapa panjang sisi sejajar kedua?`;
+                    question = Diketahui luas trapesium adalah ${luas} cm², sisi sejajar pertama ${a} cm, dan tinggi ${tinggi} cm. Berapa panjang sisi sejajar kedua?;
                     correctAnswer = ((2 * luas) / tinggi - a);
                 } else {
-                    question = `Diketahui luas trapesium adalah ${luas} cm², sisi sejajar ${a} cm dan ${b} cm. Berapa tingginya?`;
+                    question = Diketahui luas trapesium adalah ${luas} cm², sisi sejajar ${a} cm dan ${b} cm. Berapa tingginya?;
                     correctAnswer = ((2 * luas) / (a + b));
                 }
             } else if (shape === 'layangLayang') {
@@ -335,13 +335,13 @@
                 const luas = (diagonal1 * diagonal2) / 2;
                 const askFor = Math.random() < 0.33 ? 'luas' : Math.random() < 0.5 ? 'diagonal1' : 'diagonal2';
                 if (askFor === 'luas') {
-                    question = `Diketahui layang-layang memiliki diagonal ${diagonal1} cm dan ${diagonal2} cm. Berapa luasnya?`;
+                    question = Diketahui layang-layang memiliki diagonal ${diagonal1} cm dan ${diagonal2} cm. Berapa luasnya?;
                     correctAnswer = luas;
                 } else if (askFor === 'diagonal1') {
-                    question = `Diketahui luas layang-layang adalah ${luas} cm² dan diagonal kedua ${diagonal2} cm. Berapa panjang diagonal pertama?`;
+                    question = Diketahui luas layang-layang adalah ${luas} cm² dan diagonal kedua ${diagonal2} cm. Berapa panjang diagonal pertama?;
                     correctAnswer = (2 * luas) / diagonal2;
                 } else {
-                    question = `Diketahui luas layang-layang adalah ${luas} cm² dan diagonal pertama ${diagonal1} cm. Berapa panjang diagonal kedua?`;
+                    question = Diketahui luas layang-layang adalah ${luas} cm² dan diagonal pertama ${diagonal1} cm. Berapa panjang diagonal kedua?;
                     correctAnswer = (2 * luas) / diagonal1;
                 }
             }
@@ -373,18 +373,18 @@
         
             if (operation === '+') {
                 correctAnswer = num1 + num2;
-                question = `Berapa hasil dari ${num1} + ${num2}?`;
+                question = Berapa hasil dari ${num1} + ${num2}?;
             } else if (operation === '-') {
                 correctAnswer = num1 - num2;
-                question = `Berapa hasil dari ${num1} - ${num2}?`;
+                question = Berapa hasil dari ${num1} - ${num2}?;
             } else if (operation === '*') {
                 correctAnswer = num1 * num2;
-                question = `Berapa hasil dari ${num1} × ${num2}?`;
+                question = Berapa hasil dari ${num1} × ${num2}?;
             } else if (operation === '/') {
                 num2 = Math.floor(Math.random() * 50) + 1; // Pembagi antara 1 dan 50
                 correctAnswer = Math.floor(Math.random() * 50) - 25; // Hasil pembagian antara -25 dan 24
                 num1 = num2 * correctAnswer; // Pastikan pembagian bulat
-                question = `Berapa hasil dari ${num1} ÷ ${num2}?`;
+                question = Berapa hasil dari ${num1} ÷ ${num2}?;
             }
         
             // Generate pilihan jawaban
@@ -417,13 +417,13 @@
         
                 const askFor = Math.random() < 0.33 ? 'speed' : Math.random() < 0.5 ? 'distance' : 'time';
                 if (askFor === 'speed') {
-                    question = `Sebuah mobil menempuh jarak ${distance} km dalam waktu ${time} jam. Berapa kecepatannya (km/jam)?`;
+                    question = Sebuah mobil menempuh jarak ${distance} km dalam waktu ${time} jam. Berapa kecepatannya (km/jam)?;
                     correctAnswer = speed;
                 } else if (askFor === 'distance') {
-                    question = `Sebuah mobil melaju dengan kecepatan ${speed} km/jam selama ${time} jam. Berapa jarak yang ditempuh (km)?`;
+                    question = Sebuah mobil melaju dengan kecepatan ${speed} km/jam selama ${time} jam. Berapa jarak yang ditempuh (km)?;
                     correctAnswer = distance;
                 } else {
-                    question = `Sebuah mobil menempuh jarak ${distance} km dengan kecepatan ${speed} km/jam. Berapa waktu yang dibutuhkan (jam)?`;
+                    question = Sebuah mobil menempuh jarak ${distance} km dengan kecepatan ${speed} km/jam. Berapa waktu yang dibutuhkan (jam)?;
                     correctAnswer = time;
                 }
             } else if (physicsType === 'flowRate') {
@@ -434,13 +434,13 @@
         
                 const askFor = Math.random() < 0.33 ? 'flowRate' : Math.random() < 0.5 ? 'volume' : 'time';
                 if (askFor === 'flowRate') {
-                    question = `Sebuah pipa mengalirkan air sebanyak ${volume} liter dalam waktu ${time} menit. Berapa debit aliran airnya (liter/menit)?`;
+                    question = Sebuah pipa mengalirkan air sebanyak ${volume} liter dalam waktu ${time} menit. Berapa debit aliran airnya (liter/menit)?;
                     correctAnswer = flowRate;
                 } else if (askFor === 'volume') {
-                    question = `Sebuah pipa memiliki debit aliran air ${flowRate} liter/menit. Jika air mengalir selama ${time} menit, berapa volume air yang dialirkan (liter)?`;
+                    question = Sebuah pipa memiliki debit aliran air ${flowRate} liter/menit. Jika air mengalir selama ${time} menit, berapa volume air yang dialirkan (liter)?;
                     correctAnswer = volume;
                 } else {
-                    question = `Sebuah pipa memiliki debit aliran air ${flowRate} liter/menit. Jika volume air yang dialirkan adalah ${volume} liter, berapa waktu yang dibutuhkan (menit)?`;
+                    question = Sebuah pipa memiliki debit aliran air ${flowRate} liter/menit. Jika volume air yang dialirkan adalah ${volume} liter, berapa waktu yang dibutuhkan (menit)?;
                     correctAnswer = time;
                 }
             }
@@ -475,16 +475,16 @@
                 const volume = panjang * lebar * tinggi;
                 const askFor = Math.random() < 0.33 ? 'volume' : Math.random() < 0.5 ? 'panjang' : Math.random() < 0.75 ? 'lebar' : 'tinggi';
                 if (askFor === 'volume') {
-                    question = `Diketahui balok memiliki panjang ${panjang} cm, lebar ${lebar} cm, dan tinggi ${tinggi} cm. Berapa volumenya?`;
+                    question = Diketahui balok memiliki panjang ${panjang} cm, lebar ${lebar} cm, dan tinggi ${tinggi} cm. Berapa volumenya?;
                     correctAnswer = volume;
                 } else if (askFor === 'panjang') {
-                    question = `Diketahui volume balok adalah ${volume} cm³, lebarnya ${lebar} cm, dan tingginya ${tinggi} cm. Berapa panjangnya?`;
+                    question = Diketahui volume balok adalah ${volume} cm³, lebarnya ${lebar} cm, dan tingginya ${tinggi} cm. Berapa panjangnya?;
                     correctAnswer = volume / (lebar * tinggi);
                 } else if (askFor === 'lebar') {
-                    question = `Diketahui volume balok adalah ${volume} cm³, panjangnya ${panjang} cm, dan tingginya ${tinggi} cm. Berapa lebarnya?`;
+                    question = Diketahui volume balok adalah ${volume} cm³, panjangnya ${panjang} cm, dan tingginya ${tinggi} cm. Berapa lebarnya?;
                     correctAnswer = volume / (panjang * tinggi);
                 } else {
-                    question = `Diketahui volume balok adalah ${volume} cm³, panjangnya ${panjang} cm, dan lebarnya ${lebar} cm. Berapa tingginya?`;
+                    question = Diketahui volume balok adalah ${volume} cm³, panjangnya ${panjang} cm, dan lebarnya ${lebar} cm. Berapa tingginya?;
                     correctAnswer = volume / (panjang * lebar);
                 }
             } else if (shape === 'kubus') {
@@ -492,10 +492,10 @@
                 const volume = sisi * sisi * sisi;
                 const askFor = Math.random() < 0.5 ? 'volume' : 'sisi';
                 if (askFor === 'volume') {
-                    question = `Diketahui kubus memiliki sisi ${sisi} cm. Berapa volumenya?`;
+                    question = Diketahui kubus memiliki sisi ${sisi} cm. Berapa volumenya?;
                     correctAnswer = volume;
                 } else {
-                    question = `Diketahui volume kubus adalah ${volume} cm³. Berapa panjang sisinya?`;
+                    question = Diketahui volume kubus adalah ${volume} cm³. Berapa panjang sisinya?;
                     correctAnswer = Math.cbrt(volume);
                 }
             } else if (shape === 'tabung') {
@@ -506,13 +506,13 @@
                 const volume = pi * radius * radius * tinggi;
                 const askFor = Math.random() < 0.33 ? 'volume' : Math.random() < 0.5 ? 'radius' : 'tinggi';
                 if (askFor === 'volume') {
-                    question = `Diketahui tabung memiliki jari-jari ${radius} cm dan tinggi ${tinggi} cm. Berapa volumenya? (Gunakan π = ${isMultipleOf7 ? '22/7' : '3.14'})`;
+                    question = Diketahui tabung memiliki jari-jari ${radius} cm dan tinggi ${tinggi} cm. Berapa volumenya? (Gunakan π = ${isMultipleOf7 ? '22/7' : '3.14'});
                     correctAnswer = parseFloat(volume.toFixed(2));
                 } else if (askFor === 'radius') {
-                    question = `Diketahui volume tabung adalah ${parseFloat(volume.toFixed(2))} cm³ dan tingginya ${tinggi} cm. Berapa jari-jarinya? (Gunakan π = ${isMultipleOf7 ? '22/7' : '3.14'})`;
+                    question = Diketahui volume tabung adalah ${parseFloat(volume.toFixed(2))} cm³ dan tingginya ${tinggi} cm. Berapa jari-jarinya? (Gunakan π = ${isMultipleOf7 ? '22/7' : '3.14'});
                     correctAnswer = parseFloat(Math.sqrt(volume / (pi * tinggi)).toFixed(2));
                 } else {
-                    question = `Diketahui volume tabung adalah ${parseFloat(volume.toFixed(2))} cm³ dan jari-jarinya ${radius} cm. Berapa tingginya? (Gunakan π = ${isMultipleOf7 ? '22/7' : '3.14'})`;
+                    question = Diketahui volume tabung adalah ${parseFloat(volume.toFixed(2))} cm³ dan jari-jarinya ${radius} cm. Berapa tingginya? (Gunakan π = ${isMultipleOf7 ? '22/7' : '3.14'});
                     correctAnswer = parseFloat((volume / (pi * radius * radius)).toFixed(2));
                 }
             } else if (shape === 'kerucut') {
@@ -523,13 +523,13 @@
                 const volume = (1 / 3) * pi * radius * radius * tinggi;
                 const askFor = Math.random() < 0.33 ? 'volume' : Math.random() < 0.5 ? 'radius' : 'tinggi';
                 if (askFor === 'volume') {
-                    question = `Diketahui kerucut memiliki jari-jari ${radius} cm dan tinggi ${tinggi} cm. Berapa volumenya? (Gunakan π = ${isMultipleOf7 ? '22/7' : '3.14'})`;
+                    question = Diketahui kerucut memiliki jari-jari ${radius} cm dan tinggi ${tinggi} cm. Berapa volumenya? (Gunakan π = ${isMultipleOf7 ? '22/7' : '3.14'});
                     correctAnswer = parseFloat(volume.toFixed(2));
                 } else if (askFor === 'radius') {
-                    question = `Diketahui volume kerucut adalah ${parseFloat(volume.toFixed(2))} cm³ dan tingginya ${tinggi} cm. Berapa jari-jarinya? (Gunakan π = ${isMultipleOf7 ? '22/7' : '3.14'})`;
+                    question = Diketahui volume kerucut adalah ${parseFloat(volume.toFixed(2))} cm³ dan tingginya ${tinggi} cm. Berapa jari-jarinya? (Gunakan π = ${isMultipleOf7 ? '22/7' : '3.14'});
                     correctAnswer = parseFloat(Math.sqrt((3 * volume) / (pi * tinggi)).toFixed(2));
                 } else {
-                    question = `Diketahui volume kerucut adalah ${parseFloat(volume.toFixed(2))} cm³ dan jari-jarinya ${radius} cm. Berapa tingginya? (Gunakan π = ${isMultipleOf7 ? '22/7' : '3.14'})`;
+                    question = Diketahui volume kerucut adalah ${parseFloat(volume.toFixed(2))} cm³ dan jari-jarinya ${radius} cm. Berapa tingginya? (Gunakan π = ${isMultipleOf7 ? '22/7' : '3.14'});
                     correctAnswer = parseFloat((3 * volume / (pi * radius * radius)).toFixed(2));
                 }
             } else if (shape === 'prisma') {
@@ -540,16 +540,16 @@
                 const volume = luasAlas * tinggiPrisma;
                 const askFor = Math.random() < 0.33 ? 'volume' : Math.random() < 0.5 ? 'alas' : Math.random() < 0.75 ? 'tinggiAlas' : 'tinggiPrisma';
                 if (askFor === 'volume') {
-                    question = `Diketahui prisma memiliki alas segitiga dengan panjang alas ${alas} cm, tinggi alas ${tinggiAlas} cm, dan tinggi prisma ${tinggiPrisma} cm. Berapa volumenya?`;
+                    question = Diketahui prisma memiliki alas segitiga dengan panjang alas ${alas} cm, tinggi alas ${tinggiAlas} cm, dan tinggi prisma ${tinggiPrisma} cm. Berapa volumenya?;
                     correctAnswer = volume;
                 } else if (askFor === 'alas') {
-                    question = `Diketahui volume prisma adalah ${volume} cm³, tinggi alasnya ${tinggiAlas} cm, dan tinggi prisma ${tinggiPrisma} cm. Berapa panjang alas segitiganya?`;
+                    question = Diketahui volume prisma adalah ${volume} cm³, tinggi alasnya ${tinggiAlas} cm, dan tinggi prisma ${tinggiPrisma} cm. Berapa panjang alas segitiganya?;
                     correctAnswer = (2 * volume) / (tinggiAlas * tinggiPrisma);
                 } else if (askFor === 'tinggiAlas') {
-                    question = `Diketahui volume prisma adalah ${volume} cm³, panjang alasnya ${alas} cm, dan tinggi prisma ${tinggiPrisma} cm. Berapa tinggi alas segitiganya?`;
+                    question = Diketahui volume prisma adalah ${volume} cm³, panjang alasnya ${alas} cm, dan tinggi prisma ${tinggiPrisma} cm. Berapa tinggi alas segitiganya?;
                     correctAnswer = (2 * volume) / (alas * tinggiPrisma);
                 } else {
-                    question = `Diketahui volume prisma adalah ${volume} cm³, panjang alasnya ${alas} cm, dan tinggi alasnya ${tinggiAlas} cm. Berapa tinggi prisma?`;
+                    question = Diketahui volume prisma adalah ${volume} cm³, panjang alasnya ${alas} cm, dan tinggi alasnya ${tinggiAlas} cm. Berapa tinggi prisma?;
                     correctAnswer = volume / ((alas * tinggiAlas) / 2);
                 }
             } else if (shape === 'limas') {
@@ -560,16 +560,16 @@
                 const volume = (1 / 3) * luasAlas * tinggiLimas;
                 const askFor = Math.random() < 0.33 ? 'volume' : Math.random() < 0.5 ? 'alas' : Math.random() < 0.75 ? 'tinggiAlas' : 'tinggiLimas';
                 if (askFor === 'volume') {
-                    question = `Diketahui limas memiliki alas segitiga dengan panjang alas ${alas} cm, tinggi alas ${tinggiAlas} cm, dan tinggi limas ${tinggiLimas} cm. Berapa volumenya?`;
+                    question = Diketahui limas memiliki alas segitiga dengan panjang alas ${alas} cm, tinggi alas ${tinggiAlas} cm, dan tinggi limas ${tinggiLimas} cm. Berapa volumenya?;
                     correctAnswer = parseFloat(volume.toFixed(2));
                 } else if (askFor === 'alas') {
-                    question = `Diketahui volume limas adalah ${parseFloat(volume.toFixed(2))} cm³, tinggi alasnya ${tinggiAlas} cm, dan tinggi limas ${tinggiLimas} cm. Berapa panjang alas segitiganya?`;
+                    question = Diketahui volume limas adalah ${parseFloat(volume.toFixed(2))} cm³, tinggi alasnya ${tinggiAlas} cm, dan tinggi limas ${tinggiLimas} cm. Berapa panjang alas segitiganya?;
                     correctAnswer = parseFloat(((6 * volume) / (tinggiAlas * tinggiLimas)).toFixed(2));
                 } else if (askFor === 'tinggiAlas') {
-                    question = `Diketahui volume limas adalah ${parseFloat(volume.toFixed(2))} cm³, panjang alasnya ${alas} cm, dan tinggi limas ${tinggiLimas} cm. Berapa tinggi alas segitiganya?`;
+                    question = Diketahui volume limas adalah ${parseFloat(volume.toFixed(2))} cm³, panjang alasnya ${alas} cm, dan tinggi limas ${tinggiLimas} cm. Berapa tinggi alas segitiganya?;
                     correctAnswer = parseFloat(((6 * volume) / (alas * tinggiLimas)).toFixed(2));
                 } else {
-                    question = `Diketahui volume limas adalah ${parseFloat(volume.toFixed(2))} cm³, panjang alasnya ${alas} cm, dan tinggi alasnya ${tinggiAlas} cm. Berapa tinggi limas?`;
+                    question = Diketahui volume limas adalah ${parseFloat(volume.toFixed(2))} cm³, panjang alasnya ${alas} cm, dan tinggi alasnya ${tinggiAlas} cm. Berapa tinggi limas?;
                     correctAnswer = parseFloat(((3 * volume) / ((alas * tinggiAlas) / 2)).toFixed(2));
                 }
             }
@@ -593,17 +593,17 @@
          
         function showQuestion() {
             currentQuestion = generateQuestion();
-            questionText.textContent = `Soal: ${currentQuestion.question}`;
+            questionText.textContent = Soal: ${currentQuestion.question};
             document.getElementById('option1').textContent = currentQuestion.options[0];
             document.getElementById('option2').textContent = currentQuestion.options[1];
             document.getElementById('option3').textContent = currentQuestion.options[2];
             popup.style.display = 'block';
             overlay.style.display = 'block';
-            let timeLeft = 30;
-            timerElement.textContent = `Waktu tersisa: ${timeLeft} detik`;
+            let timeLeft = 240;
+            timerElement.textContent = Waktu tersisa: ${timeLeft} detik;
             timerInterval = setInterval(() => {
                 timeLeft--;
-                timerElement.textContent = `Waktu tersisa: ${timeLeft} detik`;
+                timerElement.textContent = Waktu tersisa: ${timeLeft} detik;
                 if (timeLeft <= 0) {
                     clearInterval(timerInterval);
                     handleTimeout();
@@ -687,7 +687,7 @@
         rollButton.addEventListener('click', () => {
             diceRoll = rollDice();
             diceImage.src = diceImages[diceRoll - 1]; // Update gambar dadu
-            alert(`Anda melempar dadu dan mendapatkan angka ${diceRoll}`);
+            alert(Anda melempar dadu dan mendapatkan angka ${diceRoll});
             showQuestion();
         });
 
